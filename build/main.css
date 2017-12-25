@@ -25272,13 +25272,13 @@ textarea#note {
 }
 
 .leaflet-pseudo-fullscreen .leaflet-routing-container {
-  height: 120px;
+  height: 135px;
   width: 85%;
   margin-top: -20%;
   margin-right: 15%;
   overflow-y: scroll;
   color: white;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Abel', sans-serif;
 }
 
 ion-header ion-title {
@@ -25293,7 +25293,7 @@ ion-header ion-title {
 }
 
 .page-login {
-  background-image: url("../../assets/img/4.jpg");
+  background-image: url("http://37.187.171.84/images/4.jpg");
   background-color: #FFF;
   background-size: cover;
   background-repeat: no-repeat;
