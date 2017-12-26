@@ -6,9 +6,9 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehiculeService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -186,12 +186,12 @@ var Poi = (function () {
     //ajouter poi
     Poi.prototype.addpoi = function () {
         if (this.pointinterest.name == null) {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Alert',
                 subTitle: 'Ajouter un Nom',
                 buttons: ['Ok']
             });
-            alert.present();
+            alert_1.present();
         }
         else {
             this.pointinterest.type = 'MARKER';
@@ -204,12 +204,11 @@ var Poi = (function () {
 }());
 Poi = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */])({
-        selector: 'app-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/'\n\n<ion-header>\n\n    <ion-navbar>\n\n      <ion-title style="text-align: center"><a> Ajouter POI</a> </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n    </ion-navbar>\n\n    \n\n  </ion-header>\n\n  <ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) ;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  style=" background-color:rgba(0,0,0,0.1)!important;" >\n\n               \n\n                  <ion-input placeholder="Nom..."[(ngModel)]="pointinterest.name"></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item style=" background-color:rgba(0,0,0,0.1)!important;">\n\n                    \n\n                    <textarea id="note" rows="4" placeholder="Adresse ..."[(ngModel)]="pointinterest.address" style="color:white; background-color:rgba(0,0,0,0)!important;"></textarea>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.1)!important;">\n\n                        <ion-input type="number" placeholder="Rayon" [(ngModel)]="pointinterest.ray"></ion-input>\n\n                </ion-item>\n\n       </ion-list>\n\n       <p>[lat],[lng]\n\n       \n\n        {{pointinterest.coordinate.lat}},{{pointinterest.coordinate.lng}}\n\n       </p>\n\n       \n\n    <!-- <div class="form-group">\n\n        <div class="dropdown">\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n                    data-toggle="dropdown" aria-haspopup="true"\n\n                    aria-expanded="true" style="border-radius: 0px;">\n\n                <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n                <span class="caret"></span>\n\n            </button>\n\n            <ul class="dropdown-menu" style="border-radius: 0px;">\n\n                <li *ngFor="let image of images" (click)="selectedImage = image;"style=" list-style-type: none; ">\n\n                    <a>\n\n                        <img src="{{image.uri}}" width="25px"/> {{image.text}}\n\n                    </a>\n\n                </li>\n\n            </ul>\n\n        </div>\n\n    </div> -->\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n            data-toggle="dropdown" aria-haspopup="true"\n\n            aria-expanded="true" style="border-radius: 0px;">\n\n        <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n        <span class="caret"></span>\n\n        </button>\n\n    <ion-slides style="background-color:rgba(0,0,0,0.1); height:auto;width:auto;align-items:center; justify-content:center;">\n\n        <ion-slide *ngFor="let image of images" style="background-color:rgba(0,0,0,0);height:auto;width:auto;">\n\n          <ion-item class="item item-trns item-stable" style="background-color:rgba(0,0,0,0);" >\n\n            <li (click)="selectedImage = image;"style=" list-style-type: none; ">\n\n                <a>\n\n                    <img src="{{image.uri}}" width="25px"/> {{image.text}}\n\n                </a>\n\n            </li>\n\n           </ion-item> \n\n        </ion-slide>\n\n       </ion-slides>   \n\n                       \n\n                      \n\n                       \n\n       <button ion-button center round (click)="addpoi()">Ajouter comme Point d\'Intérêt\n\n            <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n        </button>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/
+        selector: 'app-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/'\n\n<ion-header>\n\n    <ion-navbar>\n\n      <ion-title style="text-align: center"><a> Ajouter POI</a> </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n    </ion-navbar>\n\n    \n\n  </ion-header>\n\n  <ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) ;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  style=" background-color:rgba(0,0,0,0.2)!important;" >\n\n               \n\n                  <ion-input placeholder="Nom..."[(ngModel)]="pointinterest.name"></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                    \n\n                    <textarea id="note" rows="4" placeholder="Adresse ..."[(ngModel)]="pointinterest.address" style="color:white; background-color:rgba(0,0,0,0)!important;"></textarea>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                        <ion-input type="number" placeholder="Rayon" [(ngModel)]="pointinterest.ray"></ion-input>\n\n                </ion-item>\n\n       </ion-list>\n\n       <p>[lat],[lng]\n\n       \n\n        {{pointinterest.coordinate.lat}},{{pointinterest.coordinate.lng}}\n\n       </p>\n\n       \n\n    <!-- <div class="form-group">\n\n        <div class="dropdown">\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n                    data-toggle="dropdown" aria-haspopup="true"\n\n                    aria-expanded="true" style="border-radius: 0px;">\n\n                <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n                <span class="caret"></span>\n\n            </button>\n\n            <ul class="dropdown-menu" style="border-radius: 0px;">\n\n                <li *ngFor="let image of images" (click)="selectedImage = image;"style=" list-style-type: none; ">\n\n                    <a>\n\n                        <img src="{{image.uri}}" width="25px"/> {{image.text}}\n\n                    </a>\n\n                </li>\n\n            </ul>\n\n        </div>\n\n    </div> -->\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n            data-toggle="dropdown" aria-haspopup="true"\n\n            aria-expanded="true" style="border-radius: 0px;">\n\n        <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n        <span class="caret"></span>\n\n        </button>\n\n    <ion-slides style="background-color:rgba(0,0,0,0.2); height:auto;width:auto;align-items:center; justify-content:center;">\n\n        <ion-slide *ngFor="let image of images" style="background-color:rgba(0,0,0,0);height:auto;width:auto;">\n\n          <ion-item class="item item-trns item-stable" style="background-color:rgba(0,0,0,0);" >\n\n            <li (click)="selectedImage = image;"style=" list-style-type: none; ">\n\n                <a>\n\n                    <img src="{{image.uri}}" width="25px"/> {{image.text}}\n\n                </a>\n\n            </li>\n\n           </ion-item> \n\n        </ion-slide>\n\n       </ion-slides>   \n\n                       \n\n                      \n\n                       \n\n       <button ion-button center round (click)="addpoi()">Ajouter comme Point d\'Intérêt\n\n            <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n        </button>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__utils_map_service__["a" /* MapService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* ViewController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__utils_map_service__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__["a" /* GeocodingService */]])
 ], Poi);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=poi.js.map
 
 /***/ }),
@@ -220,7 +219,7 @@ var _a, _b, _c, _d, _e, _f, _g;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeocodingService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -315,7 +314,7 @@ var Driver = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__home_home__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__groups_page_groups_page__ = __webpack_require__(274);
@@ -399,7 +398,7 @@ var Icon = L.Icon;
 
 
 
-var Routing = __webpack_require__(599);
+var Routing = __webpack_require__(601);
 var Historical = (function () {
     function Historical(menu, statusBar, alertCtrl, geolocation, actionSheetCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
         this.menu = menu;
@@ -479,6 +478,7 @@ var Historical = (function () {
     // open menu
     Historical.prototype.openmenu = function () {
         this.menu.open();
+        console.log(this.selectedDevice);
     };
     //Loading groups and all real time records
     Historical.prototype.init = function () {
@@ -778,6 +778,7 @@ var Historical = (function () {
             "<br><b>Signal GSM:</b> " + realTimeRecord.signal +
             " <i class='fa fa-wifi' aria-hidden='true'></i><br><b>Sat en vue:</b> " + realTimeRecord.satInView + " <i class='fa fa-globe' aria-hidden='true'></i>";
         this.realtimecoord = realTimeRecord.coordinate;
+        this.matricule = realTimeRecord.vehicule.matricule;
         this.latpoi = this.PipeLngLat(realTimeRecord.coordinate.lat);
         this.lngpoi = this.PipeLngLat(realTimeRecord.coordinate.lng);
         this.dataManagementService.inverseGeoconding(this.latpoi, this.lngpoi, 17).subscribe(function (res) {
@@ -936,12 +937,12 @@ var Historical = (function () {
         this.mapService.removeMarkersFromMap();
         var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
         if (this.paths == null) {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert.present();
+            alert_1.present();
         }
         else {
             pathsListModal.present();
@@ -1093,12 +1094,12 @@ var Historical = (function () {
                 .catch(function () { return console.log('Error launching dialer'); });
         }
         else {
-            var alert = this.alertCtrl.create({
+            var alert_2 = this.alertCtrl.create({
                 title: 'Error',
                 subTitle: 'Numéro introuvable',
                 buttons: ['Ok']
             });
-            alert.present();
+            alert_2.present();
         }
     };
     //draw all point interests
@@ -1157,6 +1158,7 @@ var Historical = (function () {
         this.pathpoirealtime = false;
         this.pathDrawn = false;
         this.previousPathdrawn = false;
+        this.initMap();
         var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__["a" /* HistoricalForm */]);
         formModal.present();
         formModal.onDidDismiss(function (form) {
@@ -1170,12 +1172,12 @@ var Historical = (function () {
                 _this.loader.present();
                 if (form.startDate == null && form.endDate == null) {
                     _this.loader.dismiss();
-                    var alert = _this.alertCtrl.create({
+                    var alert_3 = _this.alertCtrl.create({
                         title: 'Error',
                         subTitle: 'Informations erronées',
                         buttons: ['Ok']
                     });
-                    alert.present();
+                    alert_3.present();
                 }
                 _this.allPaths = _this.historicalService.getAllPaths(_this.selectedDevice, {
                     startDate: firstDateTime,
@@ -1273,12 +1275,12 @@ var Historical = (function () {
                 _this.loader.present();
                 if (form.startDate == null && form.endDate == null) {
                     _this.loader.dismiss();
-                    var alert = _this.alertCtrl.create({
+                    var alert_4 = _this.alertCtrl.create({
                         title: 'Error',
                         subTitle: 'Informations erronées',
                         buttons: ['Ok']
                     });
-                    alert.present();
+                    alert_4.present();
                 }
                 _this.allPaths = _this.historicalService.getAllStops(_this.selectedDevice, {
                     startDate: firstDateTime,
@@ -1335,12 +1337,12 @@ var Historical = (function () {
                 _this.loader.present();
                 if (form.startDate == null && form.endDate == null) {
                     _this.loader.dismiss();
-                    var alert = _this.alertCtrl.create({
+                    var alert_5 = _this.alertCtrl.create({
                         title: 'Error',
                         subTitle: 'Informations erronées',
                         buttons: ['Ok']
                     });
-                    alert.present();
+                    alert_5.present();
                 }
                 _this.AllPaths = _this.historicalService.getAllMileages(_this.selectedDevice, {
                     startDate: startHour - (24 * 60 * 60 * 1000),
@@ -1396,12 +1398,12 @@ var Historical = (function () {
         this.mapService.removeMarkersFromMap();
         var mileageListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_25__mileage_mileage__["a" /* MileageComponent */], { mileages: this.mileages, totalMileage: this.totalMileage });
         if (this.mileages == null) {
-            var alert = this.alertCtrl.create({
+            var alert_6 = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert.present();
+            alert_6.present();
         }
         else {
             mileageListModal.present();
@@ -1474,12 +1476,12 @@ var Historical = (function () {
         this.mapService.removeMarkersFromMap();
         var stopListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__stop_list_stop_list__["a" /* StopList */], { stops: this.stops });
         if (this.stops == null) {
-            var alert = this.alertCtrl.create({
+            var alert_7 = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert.present();
+            alert_7.present();
         }
         else {
             stopListModal.present();
@@ -1499,12 +1501,11 @@ var Historical = (function () {
 }());
 Historical = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["n" /* Component */])({
-        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header class="ios-header" style=" height:48px;margin-top:20px;">\n\n     <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n      <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;" *ngIf="Root==true" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n  </ion-fab> \n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;" *ngIf="Root==false" (click)="logout()" ><ion-icon ios="ios-log-out" md="md-log-out"></ion-icon></button>\n\n</ion-fab>\n\n<ion-fab right *ngIf="resultopened==true" style="margin-top:-7px;padding-right:45px">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab right *ngIf="openStopResult==true" style="margin-top:-7px;padding-right:45px">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab right *ngIf="openMileageResult==true" style="margin-top:-7px;padding-right:45px;">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab top right style="margin-top:-7px">\n\n    <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab> -->\n\n  <ion-title><a>RimTelecom</a></ion-title>\n\n</ion-header>\n\n\n\n<ion-content>\n\n     <ion-grid style="padding-top:20px;width:30%;margin-left:0px;">\n\n        <ion-row>\n\n            <button ion-button round outline strong (click)="openFormModal()" color="light"style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;"> Historique </button>\n\n        </ion-row>\n\n        <ion-row>\n\n            <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:90%;background-color:rgba(70, 238, 14, 0.4);color:#FFF;height:30px;" >Lancement</button>\n\n        </ion-row> \n\n            <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:90%;background-color:rgba(242, 11, 11, 0.4);color:#FFF;height:30px;" >Arrêt </button>\n\n      </ion-grid>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>    \n\n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab> -->\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:450px !important;margin-right:12px;align-items:center;align-content:center" >\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:415px !important;margin-right:12px;" >\n\n        <button  title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawpath()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:380px !important;margin-right:12px;align-items:center;align-content:center;" >\n\n        <button  title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"><ion-icon ios="ios-car" md="md-car"></ion-icon> </button>\n\n    </div>\n\n  </div>\n\n      <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
+        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header class="ios-header" style=" height:48px;margin-top:20px;">\n\n     <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n      <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;" *ngIf="Root==true" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n  </ion-fab> \n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;" *ngIf="Root==false" (click)="logout()" ><ion-icon ios="ios-log-out" md="md-log-out"></ion-icon></button>\n\n</ion-fab>\n\n<ion-fab right *ngIf="resultopened==true" style="margin-top:-7px;padding-right:45px">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab right *ngIf="openStopResult==true" style="margin-top:-7px;padding-right:45px">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab right *ngIf="openMileageResult==true" style="margin-top:-7px;padding-right:45px;">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab top right style="margin-top:-7px">\n\n    <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab> -->\n\n  <ion-title >\n\n      <button ion-button round style="background-color:rgba(0,0,0,0.2);color:white;font-size:20px;width:70%;height:100%;" (click)="openGroupsModal()">{{ matricule }}</button>\n\n  </ion-title>\n\n \n\n</ion-header>\n\n\n\n<ion-content>\n\n     <ion-grid style="padding-top:20px;width:33%;margin-left:0px;">\n\n        <ion-row>\n\n            <button ion-button round outline strong (click)="openFormModal()" color="light"style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;"> Historique </button>\n\n        </ion-row>\n\n        <ion-row>\n\n            <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:90%;background-color:rgba(70, 238, 14, 0.4);color:#FFF;height:30px;" >Lancement</button>\n\n        </ion-row> \n\n            <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:90%;background-color:rgba(242, 11, 11, 0.4);color:#FFF;height:30px;" >Arrêt </button>\n\n      </ion-grid>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>    \n\n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab> -->\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:450px !important;margin-right:12px;align-items:center;align-content:center" >\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:415px !important;margin-right:12px;" >\n\n        <button  title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawpath()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:380px !important;margin-right:12px;align-items:center;align-content:center;" >\n\n        <button  title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"><ion-icon ios="ios-car" md="md-car"></ion-icon> </button>\n\n    </div>\n\n  </div>\n\n      <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* MenuController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ViewController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_22__ionic_native_call_number__["a" /* CallNumber */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_22__ionic_native_call_number__["a" /* CallNumber */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["b" /* Storage */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* ToastController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["g" /* LoadingController */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* ModalController */]) === "function" && _s || Object, typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* NavController */]) === "function" && _t || Object, typeof (_u = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavParams */]) === "function" && _u || Object, typeof (_v = typeof __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]) === "function" && _v || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_22__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]])
 ], Historical);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
 //# sourceMappingURL=historical.js.map
 
 /***/ }),
@@ -1709,9 +1710,9 @@ webpackEmptyAsyncContext.id = 155;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1796,7 +1797,7 @@ GroupService = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehiculeForm; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_index__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_index__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_vehicule_service__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2153,13 +2154,13 @@ var GestPoi = (function () {
         this.POLYGON = "POLYGON";
         this.pointInterests = null;
         this.imagesDir = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */];
+        this.imagesPOIDir = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["c" /* imagesPOIDir */];
     }
     GestPoi.prototype.openmenu = function () {
         this.menu.open();
     };
     GestPoi.prototype.ngOnInit = function () {
         this.loadPoi();
-        console.log(this.pointInterests);
     };
     GestPoi.prototype.loadPoi = function () {
         var _this = this;
@@ -2215,7 +2216,7 @@ var GestPoi = (function () {
 }());
 GestPoi = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-        selector: 'page-gest-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/'<ion-header style="height:48px">\n\n                \n\n          <ion-navbar hideBackButton="true">\n\n            <ion-title>Points d\'intérêt</ion-title>\n\n          </ion-navbar>\n\n          <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px">\n\n                <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n         </ion-fab>\n\n    </ion-header>\n\n    <ion-content>\n\n            <ion-list-header>Points</ion-list-header>\n\n            <ion-list  *ngFor="let pointInterest of pointInterests">\n\n                    <ion-item-sliding #item *ngIf="pointInterest.type==MARKER">\n\n                     \n\n                    <ion-item>\n\n                            <ion-avatar item-start>\n\n                                <img src="{{imagesDir}}{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n                            </ion-avatar>\n\n                            \n\n                                    <h2>{{pointInterest.name}} </h2> \n\n                                    <button ion-button float-right clear color="danger" (click)="delete(pointInterest)" style="width:20px;"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n\n                           \n\n                            \n\n                            <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n                           <p style="font-size:15px">{{pointInterest.address}}</p> \n\n                        \n\n                    </ion-item>\n\n                     <ion-item-options side="right">\n\n                            <button ion-button color="danger" (click)="delete(pointInterest)" >Supprimer</button>\n\n                    </ion-item-options>\n\n                    \n\n                    </ion-item-sliding>\n\n                    </ion-list>\n\n                    <ion-list-header>Zones</ion-list-header>\n\n            <ion-list *ngFor="let pointInterest of pointInterests">\n\n                <ion-item-sliding *ngIf="pointInterest.type==POLYGON">\n\n                        <ion-item>\n\n                                <ion-avatar item-start>\n\n                                    <img src="{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n                                </ion-avatar>\n\n                                \n\n                                        <h2>{{pointInterest.name}} </h2> \n\n                                        <button ion-button float-right clear color="danger" (click)="delete(pointInterest)" style="width:20px;"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n\n                               \n\n                                \n\n                                <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n                               <p style="font-size:15px">{{pointInterest.address}}</p> \n\n                            \n\n                        </ion-item>\n\n                         <ion-item-options side="right">\n\n                                <button ion-button color="danger" (click)="delete(pointInterest)" >Supprimer</button>\n\n                        </ion-item-options>\n\n                </ion-item-sliding>\n\n            </ion-list>      \n\n                   \n\n              \n\n    </ion-content>\n\n   '/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/,
+        selector: 'page-gest-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/'<ion-header style="height:48px">\n\n                \n\n          <ion-navbar hideBackButton="true">\n\n            <ion-title>Points d\'intérêt</ion-title>\n\n          </ion-navbar>\n\n          <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px;margin-left:0px;margin-top:15px;">\n\n                <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n         </ion-fab>\n\n    </ion-header>\n\n    <ion-content>\n\n            <ion-list-header>Points</ion-list-header>\n\n            <ion-list  *ngFor="let pointInterest of pointInterests">\n\n                    <ion-item-sliding #item *ngIf="pointInterest.type==MARKER">\n\n                     \n\n                    <ion-item>\n\n                            <ion-avatar item-start>\n\n                                <img src="{{imagesDir}}{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n                            </ion-avatar>\n\n                            \n\n                                    <h2>{{pointInterest.name}} </h2> \n\n                                    <button ion-button float-right clear color="danger" (click)="delete(pointInterest)" style="width:20px;"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n\n                           \n\n                            \n\n                            <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n                           <p style="font-size:15px">{{pointInterest.address}}</p> \n\n                        \n\n                    </ion-item>\n\n                     <ion-item-options side="right">\n\n                            <button ion-button color="danger" (click)="delete(pointInterest)" >Supprimer</button>\n\n                    </ion-item-options>\n\n                    \n\n                    </ion-item-sliding>\n\n                    </ion-list>\n\n                    <ion-list-header>Zones</ion-list-header>\n\n            <ion-list *ngFor="let pointInterest of pointInterests">\n\n                <ion-item-sliding *ngIf="pointInterest.type==POLYGON">\n\n                        <ion-item>\n\n                                <ion-avatar item-start>\n\n                                    <img src="{{imagesDir+imagesPOIDir+pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n                                </ion-avatar>\n\n                                \n\n                                        <h2>{{pointInterest.name}} </h2> \n\n                                        <button ion-button float-right clear color="danger" (click)="delete(pointInterest)" style="width:20px;"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n\n                               \n\n                                \n\n                                <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n                               <p style="font-size:15px">{{pointInterest.address}}</p> \n\n                            \n\n                        </ion-item>\n\n                         <ion-item-options side="right">\n\n                                <button ion-button color="danger" (click)="delete(pointInterest)" >Supprimer</button>\n\n                        </ion-item-options>\n\n                </ion-item-sliding>\n\n            </ion-list>      \n\n                   \n\n              \n\n    </ion-content>\n\n   '/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */]])
 ], GestPoi);
@@ -2304,7 +2305,7 @@ var StopList = (function () {
 }());
 StopList = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
-        selector: 'page-stop-list',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\stop-list\stop-list.html"*/'<ion-header>\n\n    \n\n      <ion-navbar>\n\n        <ion-title>Liste des arrêts</ion-title>\n\n        <ion-buttons end>\n\n                <button ion-button icon-only  (click)="closeModal()" >\n\n            <ion-icon name="arrow-down"></ion-icon>\n\n          </button>\n\n            </ion-buttons>\n\n      </ion-navbar>\n\n    \n\n</ion-header>\n\n<ion-content padding style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n    <div style = "overflow: auto ; height: auto;">\n\n            <table class="table table-striped" style="font-size: 15px;font-weight: bold" width="100%">\n\n                    <thead>\n\n                    <tr  style="background-color: #F5F5F5;opacity: 0.65">\n\n                        <th width="25%" style="text-align: center"><i class="fa fa-clock-o" aria-hidden="true"></i> Date\n\n                            Arrêt\n\n                        </th>\n\n                        <th width="45%" style="text-align: center">Lieu Arrêt</th>\n\n                        <th width="30%" style="text-align: center">Durée Arrêt</th>\n\n                    </tr>\n\n                    </thead>\n\n                    <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;">\n\n    \n\n                   \n\n    \n\n                        <tr  *ngFor="let stop of stops" style="border-top: solid black 1px;">\n\n    \n\n                            <td width="15%" data-toggle="tooltip"  (click)="drawStop(stop)"  title="{{stop.beginStopTime | date:\'dd-MM-y HH:mm\'}}">\n\n                                {{stop.beginStopTime | date:\'dd-MM HH:mm\'}}\n\n                            </td>\n\n                            <td width="55%" data-toggle="tooltip"  (click)="drawStop(stop)"  title="{{stop.geocodingDetails}}">\n\n                                {{stop.geocoding }}\n\n                            </td>\n\n                            <td width="30%" data-toggle="tooltip"  (click)="drawStop(stop)"  title="{{stop.stopDurationStr}}">\n\n                                {{stop.stopDurationStr}}\n\n                            </td>\n\n                           \n\n                                    <td  colspan="3" style="text-align: center">\n\n            \n\n                                        <button type="button" (click)="openPoiModal(stop)" class="btn btn-success btn-xs">\n\n                                            <i class="fa fa-map-marker" aria-hidden="true"></i> \n\n                                           \n\n                                        </button>\n\n            \n\n                                    </td>\n\n                    \n\n                        </tr>\n\n                \n\n                   \n\n    \n\n    \n\n                    </tbody>\n\n                </table>\n\n    \n\n    </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\stop-list\stop-list.html"*/,
+        selector: 'page-stop-list',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\stop-list\stop-list.html"*/'<ion-header>\n\n    \n\n      <ion-navbar>\n\n        <ion-title>Liste des arrêts</ion-title>\n\n        <ion-buttons end>\n\n                <button ion-button icon-only  (click)="closeModal()" >\n\n            <ion-icon name="arrow-down"></ion-icon>\n\n          </button>\n\n            </ion-buttons>\n\n      </ion-navbar>\n\n    \n\n</ion-header>\n\n<ion-content padding style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n    <div style = "overflow: auto ; height: auto;">\n\n            <table class="table table-striped" style="font-size: 15px;font-weight: bold" width="100%">\n\n                    <thead>\n\n                    <tr  style="background-color: #F5F5F5;opacity: 0.65">\n\n                        <th width="25%" style="text-align: center"><i class="fa fa-clock-o" aria-hidden="true"></i> Date\n\n                            Arrêt\n\n                        </th>\n\n                        <th width="45%" style="text-align: center">Lieu Arrêt</th>\n\n                        <th width="30%" style="text-align: center">Durée Arrêt</th>\n\n                    </tr>\n\n                    </thead>\n\n                    <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;">\n\n    \n\n                   \n\n    \n\n                        <tr  *ngFor="let stop of stops" style="border-top: solid black 1px;">\n\n    \n\n                            <td width="15%" data-toggle="tooltip"  (click)="drawStop(stop)"  title="{{stop.beginStopTime | date:\'dd-MM-y HH:mm\'}}">\n\n                                {{stop.beginStopTime | date:\'dd-MM HH:mm\'}}\n\n                            </td>\n\n                            <td width="55%" data-toggle="tooltip"  (click)="drawStop(stop)"  title="{{stop.geocodingDetails}}">\n\n                                {{stop.geocoding }}\n\n                            </td>\n\n                            <td width="30%" data-toggle="tooltip"  (click)="drawStop(stop)"  title="{{stop.stopDurationStr}}">\n\n                                {{stop.stopDurationStr}}\n\n                            </td>\n\n                           \n\n                                    <td  colspan="3" style="text-align: center">\n\n            \n\n                                        <button type="button" (click)="openPoiModal(stop)" style="width:50px;height:50px; background-color:rgba(0,0,0,0)">\n\n                                            <img src="../../assets/img/map-marker.png" />\n\n                                        </button>\n\n            \n\n                                    </td>\n\n                    \n\n                        </tr>\n\n                \n\n                   \n\n    \n\n    \n\n                    </tbody>\n\n                </table>\n\n    \n\n    </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\stop-list\stop-list.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_0__utils_map_service__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* ModalController */]])
 ], StopList);
@@ -2357,7 +2358,7 @@ var HistoricalForm = (function () {
 }());
 HistoricalForm = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-historical-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title style="width:100%"><a>Selectionner le véhicule</a> </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="closeModal()">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n    </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n  \n\n</ion-header>\n\n\n\n\n\n<ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n    <ion-item style="background-color:rgba(0,0,0,0.3)">\n\n        <ion-label style="color:white">Historique :</ion-label>\n\n        <ion-select [(ngModel)]="list" interface="popover" style="width:300px;color:white">\n\n          <ion-option value="trajet">Liste des trajets</ion-option>\n\n          <ion-option value="arret">Liste des arrêts</ion-option>\n\n          <ion-option value="kilo">Liste de Kilométrage</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      <ion-item style="margin-top: 200px;background-color:rgba(0,0,0,0.3)">\n\n        <ion-label style="color:white">Date début</ion-label>\n\n        <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate" style="color:white"></ion-datetime>\n\n      </ion-item>\n\n  \n\n      <ion-item style="margin-bottom: 20px;background-color:rgba(0,0,0,0.3)">\n\n          <ion-label style="color:white">Date fin</ion-label>\n\n          <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate" style="color:white"> </ion-datetime>\n\n        </ion-item>\n\n  <!--<ion-item>\n\n    <ion-label>Date de début</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="firstDate"></ion-datetime>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Date de fin</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="lastDate"></ion-datetime>\n\n  </ion-item>-->\n\n  \n\n  <button ion-button center round (click)="getAllPaths()">Chercher  \n\n      <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n  </button>\n\n  <button ion-button center round (click)="closeModal()">Annuler  \n\n      <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/,
+        selector: 'page-historical-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title style="width:100%"><a>Selectionner le véhicule</a> </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="closeModal()">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n    </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n  \n\n</ion-header>\n\n\n\n\n\n<ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n    <ion-item style="background-color:rgba(0,0,0,0.3);margin-top:200px;">\n\n        <ion-label style="color:white">Historique:  <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></ion-label>\n\n        <ion-select select-ios-padding-end [(ngModel)]="list" interface="popover" style="width:100%;color:white" >\n\n          <ion-option value="trajet">Liste des trajets</ion-option>\n\n          <ion-option value="arret">Liste des arrêts</ion-option>\n\n          <ion-option value="kilo">Liste de Kilométrage</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      <ion-item style="margin-top: 70px;background-color:rgba(0,0,0,0.3)">\n\n        <ion-label style="color:white">Date début</ion-label>\n\n        <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate" style="color:white"></ion-datetime>\n\n      </ion-item>\n\n  \n\n      <ion-item style="margin-bottom: 20px;background-color:rgba(0,0,0,0.3)">\n\n          <ion-label style="color:white">Date fin</ion-label>\n\n          <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate" style="color:white"> </ion-datetime>\n\n        </ion-item>\n\n  <!--<ion-item>\n\n    <ion-label>Date de début</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="firstDate"></ion-datetime>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Date de fin</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="lastDate"></ion-datetime>\n\n  </ion-item>-->\n\n  \n\n  <button ion-button center round (click)="getAllPaths()">Chercher  \n\n      <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n  </button>\n\n  <button ion-button center round (click)="closeModal()">Annuler  \n\n      <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
 ], HistoricalForm);
@@ -2416,7 +2417,7 @@ PathsList = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return contentHeaders; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = createAuthorizationHeader;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(26);
 
 var contentHeaders = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Headers */]();
 contentHeaders.append('Accept', 'application/json');
@@ -2434,8 +2435,8 @@ function createAuthorizationHeader(headers) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SigningService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_headers__ = __webpack_require__(250);
@@ -2823,7 +2824,7 @@ var Vehicules = (function () {
 }());
 Vehicules = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
-        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n  <ion-navbar  style="height:48px" hideBackButton="true">\n\n    <ion-title>Véhicules</ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px">\n\n        <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n  </ion-fab>\n\n</ion-header>\n\n  <ion-content>\n\n      <table style="font-size: 15px;" >\n\n          <thead>\n\n            <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);opacity: 0.75;">\n\n              <th  style="text-align: center;">Equipement</th>\n\n              <th  style="text-align: center;padding-left:9px;padding-right:9px;">Immatricule</th>\n\n              <th  style="text-align: center;padding-left: 9px;padding-right: 9px"> Surnom</th>\n\n              <th style="text-align: center;padding-left: 9px;padding-right: 9px">Mark</th>\n\n            </tr>\n\n          </thead>\n\n          <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n            \n\n               <tr *ngFor="let vehicule of vehicules" style="border-top: solid black 1px;height:50px;">\n\n                <td style="text-align: center"  (click)="presentConfirm(vehicule)">\n\n                   {{vehicule.device.idDevice}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                    {{vehicule.matricule}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                  {{vehicule.alias}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                   {{vehicule.mark}}\n\n                </td>\n\n              </tr>\n\n            </tbody>\n\n        </table>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
+        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n  <ion-navbar  style="height:48px" hideBackButton="true">\n\n    <ion-title>Véhicules</ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px;margin-top:15px;">\n\n        <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n  </ion-fab>\n\n</ion-header>\n\n  <ion-content>\n\n      <table style="font-size: 15px;" >\n\n          <thead>\n\n            <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);opacity: 0.75;">\n\n              <th  style="text-align: center;">Equipement</th>\n\n              <th  style="text-align: center;padding-left:9px;padding-right:9px;">Immatricule</th>\n\n              <th  style="text-align: center;padding-left: 9px;padding-right: 9px"> Surnom</th>\n\n              <th style="text-align: center;padding-left: 9px;padding-right: 9px">Mark</th>\n\n            </tr>\n\n          </thead>\n\n          <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n            \n\n               <tr *ngFor="let vehicule of vehicules" style="border-top: solid black 1px;height:50px;">\n\n                <td style="text-align: center"  (click)="presentConfirm(vehicule)">\n\n                   {{vehicule.device.idDevice}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                    {{vehicule.matricule}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                  {{vehicule.alias}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                   {{vehicule.mark}}\n\n                </td>\n\n              </tr>\n\n            </tbody>\n\n        </table>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_vehicule_service__["a" /* VehiculeService */]])
 ], Vehicules);
@@ -2837,9 +2838,10 @@ Vehicules = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Groupes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_group_service__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_group_service__ = __webpack_require__(156);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2849,6 +2851,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2862,6 +2865,7 @@ var Groupes = (function () {
         this.numPages = 0;
         this.itemsPerPage = 25;
         this.groups = [];
+        this.imagesDir = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */];
     }
     Groupes.prototype.ngOnInit = function () {
         var _this = this;
@@ -2882,13 +2886,15 @@ var Groupes = (function () {
             _this.bigTotalItems = groups.totalElements;
         });
     };
+    Groupes.prototype.alertinfo = function (group) {
+    };
     return Groupes;
 }());
 Groupes = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'page-groupes',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/'<ion-header>\n\n        <ion-navbar  style="height:48px" hideBackButton="true">\n\n          <ion-title>Véhicules</ion-title>\n\n        </ion-navbar>\n\n        <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px">\n\n              <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n        </ion-fab>\n\n      </ion-header>\n\n        <ion-content>\n\n            <table style="font-size: 15px;width:100%" >\n\n                <thead style="width:100%!important">\n\n                  <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);width:100%!important;opacity: 0.75;">\n\n                    <th  style="text-align: center;width:50%" >Nom</th>\n\n                    <th  style="text-align: center;width:50%">Image</th>\n\n                  \n\n                  </tr>\n\n                </thead>\n\n                <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n                  \n\n                     <tr *ngFor="let group of groups" style="border-top: solid black 1px;height:50px;">\n\n                      <td style="text-align: center"  >\n\n                            {{group.nom}}\n\n                      </td>\n\n                      <td style="text-align: center;" data-toggle="tooltip">\n\n                            <img src="{{imagesDir}}cars/{{group.imageUrl}}" width="30px" />\n\n                      </td>\n\n                     \n\n                    </tr>\n\n                  </tbody>\n\n              </table>\n\n        </ion-content>\n\n      '/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
+        selector: 'page-groupes',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/'<ion-header>\n\n        <ion-navbar  style="height:48px" hideBackButton="true">\n\n          <ion-title>Véhicules</ion-title>\n\n        </ion-navbar>\n\n        <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px;margin-left:0px;margin-top:15px;">\n\n              <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n        </ion-fab>\n\n      </ion-header>\n\n        <ion-content>\n\n            <table style="font-size: 15px;width:100%" >\n\n                <thead style="width:100%!important">\n\n                  <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);width:100%!important;opacity: 0.75;">\n\n                    <th  style="text-align: center;width:50%" >Nom</th>\n\n                    <th  style="text-align: center;width:50%">Image</th>\n\n                  \n\n                  </tr>\n\n                </thead>\n\n                <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n                  \n\n                     <tr *ngFor="let group of groups" style="border-top: solid black 1px;height:50px;">\n\n                      <td style="text-align: center"  >\n\n                            {{group.nom}}\n\n                      </td>\n\n                      <td style="text-align: center;" data-toggle="tooltip">\n\n                            <img src="{{imagesDir+group.imageUrl}}" width="30px" />\n\n                      </td>\n\n                     \n\n                    </tr>\n\n                  </tbody>\n\n              </table>\n\n        </ion-content>\n\n      '/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2__providers_group_service__["a" /* GroupService */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_group_service__["a" /* GroupService */]])
 ], Groupes);
 
 //# sourceMappingURL=groupes.js.map
@@ -2899,9 +2905,149 @@ Groupes = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_service__ = __webpack_require__(279);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DriverComponent = (function () {
+    function DriverComponent(menu, driverService) {
+        this.menu = menu;
+        this.driverService = driverService;
+        // pag vars
+        this.maxSize = 5;
+        this.bigTotalItems = 175;
+        this.bigCurrentPage = 1;
+        this.numPages = 0;
+        this.itemsPerPage = 25;
+        this.drivers = [];
+        this.bigCurrentPage = this.driverService.bigCurrentPage;
+    }
+    DriverComponent.prototype.ngOnInit = function () {
+        this.getListDrivers(this.bigCurrentPage - 1, this.itemsPerPage);
+    };
+    DriverComponent.prototype.getListDrivers = function (page, size) {
+        var _this = this;
+        this.driverService.bigCurrentPage = this.bigCurrentPage;
+        this.driverService.getDriversByPageAndSize(this.bigCurrentPage - 1, this.itemsPerPage).subscribe(function (drivers) {
+            _this.drivers = drivers.content;
+            _this.driverService.drivers = _this.drivers;
+            _this.bigTotalItems = drivers.totalElements;
+            console.log(_this.drivers);
+        });
+    };
+    DriverComponent.prototype.openmenu = function () {
+        this.menu.open();
+    };
+    return DriverComponent;
+}());
+DriverComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'page-chauffeurs',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\chauffeurs\chauffeurs.html"*/'<ion-header>\n\n    <ion-navbar  style="height:48px" hideBackButton="true">\n\n      <ion-title>Chauffeurs</ion-title>\n\n    </ion-navbar>\n\n    <ion-fab top left outline class="ion-fab1" #fab style="margin-left:0px;margin-left:0px;margin-top:15px;">\n\n          <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n    </ion-fab>\n\n  </ion-header>\n\n    <ion-content>\n\n        <table style="font-size: 15px;width:100%" >\n\n            <thead style="width:100%!important">\n\n              <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);width:100%!important;opacity: 0.75;">\n\n                <th  style="text-align: center;width:33%" >Nom</th>\n\n                <th  style="text-align: center;width:33%">Téléphone</th>\n\n                <th  style="text-align: center;width:33%">CIN</th>\n\n              </tr>\n\n            </thead>\n\n            <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n              \n\n                 <tr *ngFor="let driver of drivers" style="border-top: solid black 1px;height:50px;">\n\n                  <td style="text-align: center"  >\n\n                        {{driver.lastName}} {{driver.firstName}}\n\n                  </td>\n\n                  <td style="text-align: center;" data-toggle="tooltip">\n\n                    {{driver.telephone}}\n\n                  </td>\n\n                  <td style="text-align: center;" data-toggle="tooltip">\n\n                    {{driver.cin}}\n\n                  </td>\n\n                  \n\n                </tr>\n\n              </tbody>\n\n          </table>\n\n    </ion-content>\n\n  '/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\chauffeurs\chauffeurs.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* MenuController */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_driver_service__["a" /* DriverService */]])
+], DriverComponent);
+
+//# sourceMappingURL=chauffeurs.js.map
+
+/***/ }),
+
+/***/ 279:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(22);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DriverService = (function () {
+    function DriverService(_http) {
+        this._http = _http;
+        this.toastyAdd = false;
+        this.toastyUpdate = false;
+        this.drivers = [];
+        this.bigCurrentPage = 1;
+        this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
+    }
+    DriverService.prototype.getDriversByPageAndSize = function (page, size) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/' + 'list' + '?page=' + page + '&size=' + size, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    DriverService.prototype.deleteDriverById = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.delete(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    DriverService.prototype.putDriver = function (driver) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Accept', 'application/json');
+        headers.append('Authorization', this.currentuser.token);
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify(driver);
+        return this._http.put(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/', driver, options).map(function (res) { return res.json(); });
+    };
+    DriverService.prototype.addDriver = function (driver) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Accept', 'application/json');
+        headers.append('Authorization', this.currentuser.token);
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify(driver);
+        return this._http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/', driver, options).map(function (res) { return res.json(); });
+    };
+    DriverService.prototype.getDriver = function (idDriver) {
+        return this.drivers.find(function (driver) { return driver.idDriver === idDriver; });
+    };
+    DriverService.prototype.getOne = function (idDriver) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/' + idDriver, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    return DriverService;
+}());
+DriverService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
+], DriverService);
+
+//# sourceMappingURL=driver.service.js.map
+
+/***/ }),
+
+/***/ 280:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(285);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2909,7 +3055,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 283:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2920,14 +3066,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_poi_poi__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_login__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_historical_historical__ = __webpack_require__(137);
@@ -2945,12 +3091,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_datamana_vehicules_vehicules__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_datamana_groupes_groupes__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_vehicule_service__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_driver_service__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -3002,7 +3152,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__pages_gestpoi_gestpoi__["a" /* GestPoi */],
             __WEBPACK_IMPORTED_MODULE_28__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
             __WEBPACK_IMPORTED_MODULE_29__pages_datamana_groupes_groupes__["a" /* Groupes */],
-            __WEBPACK_IMPORTED_MODULE_1__pages_datamana_vehicules_vehicule_form_vehicule_form__["a" /* VehiculeForm */]
+            __WEBPACK_IMPORTED_MODULE_1__pages_datamana_vehicules_vehicule_form_vehicule_form__["a" /* VehiculeForm */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_datamana_chauffeurs_chauffeurs__["a" /* DriverComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["a" /* BrowserModule */],
@@ -3026,7 +3177,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__pages_gestpoi_gestpoi__["a" /* GestPoi */],
             __WEBPACK_IMPORTED_MODULE_28__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
             __WEBPACK_IMPORTED_MODULE_29__pages_datamana_groupes_groupes__["a" /* Groupes */],
-            __WEBPACK_IMPORTED_MODULE_1__pages_datamana_vehicules_vehicule_form_vehicule_form__["a" /* VehiculeForm */]
+            __WEBPACK_IMPORTED_MODULE_1__pages_datamana_vehicules_vehicule_form_vehicule_form__["a" /* VehiculeForm */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_datamana_chauffeurs_chauffeurs__["a" /* DriverComponent */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
@@ -3042,6 +3194,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__angular_common__["d" /* DecimalPipe */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__["a" /* CallNumber */],
             __WEBPACK_IMPORTED_MODULE_0__providers_group_service__["a" /* GroupService */],
+            __WEBPACK_IMPORTED_MODULE_32__providers_driver_service__["a" /* DriverService */],
             __WEBPACK_IMPORTED_MODULE_25__ionic_storage__["a" /* IonicStorageModule */],
             { provide: __WEBPACK_IMPORTED_MODULE_7__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["e" /* IonicErrorHandler */] }
         ]
@@ -3052,15 +3205,15 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 320:
+/***/ 322:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__driver__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__driver__ = __webpack_require__(323);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__group__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__group__ = __webpack_require__(324);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vehicule__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vehicule__ = __webpack_require__(325);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__vehicule__["a"]; });
 
 
@@ -3069,7 +3222,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 321:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3102,7 +3255,7 @@ var DriverLabel = (function () {
 
 /***/ }),
 
-/***/ 322:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3138,7 +3291,7 @@ var GroupAddDTO = (function () {
 
 /***/ }),
 
-/***/ 323:
+/***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3188,7 +3341,7 @@ var Vehicule = (function () {
 
 /***/ }),
 
-/***/ 330:
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3203,6 +3356,7 @@ var Vehicule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_datamana_groupes_groupes__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(278);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3212,6 +3366,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -3232,6 +3387,7 @@ var MyApp = (function () {
         this.storage = storage;
         this.toastCtrl = toastCtrl;
         this.listhide = true;
+        this.tempsreelopened = true;
         platform.ready().then(function () {
             //alert de confirmation de quitter l'application
             platform.registerBackButtonAction(function () {
@@ -3273,16 +3429,26 @@ var MyApp = (function () {
     };
     //navigation to gestion Poi
     MyApp.prototype.GotoGestpoi = function () {
+        this.tempsreelopened = false;
         this.nav.push(__WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__["a" /* GestPoi */]);
+        this.menuclose();
+    };
+    MyApp.prototype.GotoGestchauf = function () {
+        this.tempsreelopened = false;
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_10__pages_datamana_chauffeurs_chauffeurs__["a" /* DriverComponent */]);
         this.menuclose();
     };
     //navigation to  temps reel et historique
     MyApp.prototype.GotoTempsRealandHistorique = function () {
-        this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_0__pages_historical_historical__["a" /* Historical */]);
+        if (!this.tempsreelopened) {
+            this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_0__pages_historical_historical__["a" /* Historical */]);
+        }
         this.menuclose();
+        this.tempsreelopened = true;
     };
     //navigation to gestion de vehicule
     MyApp.prototype.GoToGestVehi = function () {
+        this.tempsreelopened = false;
         this.nav.push(__WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__["a" /* Vehicules */]);
         this.menuclose();
     };
@@ -3291,6 +3457,7 @@ var MyApp = (function () {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
     };
     MyApp.prototype.GoToGestGroup = function () {
+        this.tempsreelopened = false;
         this.nav.push(__WEBPACK_IMPORTED_MODULE_9__pages_datamana_groupes_groupes__["a" /* Groupes */]);
         this.menuclose();
     };
@@ -3328,7 +3495,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/'<ion-menu [content]="mycontent" style="background-color:rgba(0,0,0,0);margin-top:20px;">\n\n  <ion-header style="height:48px;">\n\n    <ion-title style="color:white"> Menu </ion-title>\n\n  </ion-header>\n\n  <ion-content style="background-color:white">\n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/img/logorim.jpg">\n\n      </ion-avatar>\n\n      <h2>Rim Télécom</h2>\n\n      <p>Online</p>\n\n    </ion-item>\n\n    <button ion-button color="light" (click)="GotoTempsRealandHistorique()" style="width:90%">Temps réel & Historique</button>\n\n    <button ion-button color="light" (click)="hidelist()" style="width:90%">Gestion de données</button>\n\n    <ion-list [hidden]="listhide">\n\n      <ion-card>\n\n        <ion-list>\n\n          <button ion-item (click)="GoToGestVehi()">\n\n            <i class="fa fa-car" aria-hidden="true" ></i>\n\n              Véhicules\n\n          </button>\n\n          <button ion-item (click)="GoToGestGroup()">\n\n            <i class="fa fa-users" aria-hidden="true"></i>\n\n              Groupes\n\n          </button>\n\n          <button ion-item>\n\n            <i class="fa fa-user" aria-hidden="true"></i>\n\n            Conducteurs  \n\n          </button>\n\n          <button ion-item (click)="GotoGestpoi()">\n\n            <i class="fa fa-flag" aria-hidden="true"></i>\n\n            Points d\'intérêt\n\n          </button>\n\n        </ion-list>\n\n      </ion-card>\n\n    </ion-list>  \n\n  </ion-content>\n\n  <ion-footer>\n\n    <button ion-button outline full color="danger" (click)="logoutconfirm()">Déconnexion</button>\n\n  </ion-footer>\n\n</ion-menu>\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/'<ion-menu [content]="mycontent" style="background-color:rgba(0,0,0,0);margin-top:20px;">\n\n  <ion-header style="height:48px;">\n\n    <ion-title style="color:white"> Menu </ion-title>\n\n  </ion-header>\n\n  <ion-content style="background-color:white">\n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/img/logorim.jpg">\n\n      </ion-avatar>\n\n      <h2>Rim Télécom</h2>\n\n      <p>Online</p>\n\n    </ion-item>\n\n    <button ion-button color="light" (click)="GotoTempsRealandHistorique()" style="width:90%">Temps réel & Historique</button>\n\n    <button ion-button color="light" (click)="hidelist()" style="width:90%">Gestion de données</button>\n\n    <ion-list [hidden]="listhide">\n\n      <ion-card>\n\n        <ion-list>\n\n          <button ion-item (click)="GoToGestVehi()">\n\n            <i class="fa fa-car" aria-hidden="true" ></i>\n\n              Véhicules\n\n          </button>\n\n          <button ion-item (click)="GoToGestGroup()">\n\n            <i class="fa fa-users" aria-hidden="true"></i>\n\n              Groupes\n\n          </button>\n\n          <button ion-item (click)="GotoGestchauf()">\n\n            <i class="fa fa-user" aria-hidden="true"></i>\n\n            Conducteurs  \n\n          </button>\n\n          <button ion-item (click)="GotoGestpoi()">\n\n            <i class="fa fa-flag" aria-hidden="true"></i>\n\n            Points d\'intérêt\n\n          </button>\n\n        </ion-list>\n\n      </ion-card>\n\n    </ion-list>  \n\n  </ion-content>\n\n  <ion-footer>\n\n    <button ion-button outline full color="danger" (click)="logoutconfirm()">Déconnexion</button>\n\n  </ion-footer>\n\n</ion-menu>\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ToastController */]])
 ], MyApp);
@@ -3343,9 +3510,9 @@ MyApp = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataManagementService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3736,9 +3903,9 @@ MapService = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricalService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3811,9 +3978,9 @@ HistoricalService = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RealTimeService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(250);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3892,5 +4059,5 @@ RealTimeService = __decorate([
 
 /***/ })
 
-},[278]);
+},[280]);
 //# sourceMappingURL=main.js.map

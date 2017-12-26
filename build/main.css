@@ -25231,6 +25231,10 @@ ion-header ion-title a {
   font-size: 20px;
 }
 
+ion-header ion-title ion-label {
+  color: white;
+}
+
 ion-header ion-fab1 {
   padding-top: 0px;
 }
