@@ -451,7 +451,6 @@ var Historical = (function () {
         });
         this.loader.present();
         this.loadGroups();
-        this.getAllRealTimeRecords();
         // this.geolocation.getCurrentPosition().then((resp) => {
         //   this.currentlocationlat=resp.coords.latitude;
         //   this.currentlocationlng=resp.coords.longitude;
@@ -485,6 +484,7 @@ var Historical = (function () {
         var _this = this;
         this.allGroups = this.realTimeService.getAllGroups(this.searchWord).subscribe(function (groupes) {
             _this.groups = groupes;
+            _this.getAllRealTimeRecords();
             _this.openGroupsModal();
             _this.loader.dismiss();
             _this.groups.forEach(function (group) {
