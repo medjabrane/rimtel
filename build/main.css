@@ -25269,7 +25269,12 @@ textarea#note {
   }
 }
 
-.leaflet-pseudo-fullscreen .leaflet-routing-container {
+.leaflet-control-zoom-in {
+  margin-top: 20px;
+}
+
+.leaflet-pseudo-fullscreen
+.leaflet-routing-container {
   height: 90px;
   width: 60%;
   margin-top: -20%;
@@ -25279,12 +25284,14 @@ textarea#note {
   font-family: 'Slabo 27px', serif;
 }
 
-.leaflet-pseudo-fullscreen .leaflet-routing-container div.leaflet-routing-alt h2 {
+.leaflet-pseudo-fullscreen
+.leaflet-routing-container div.leaflet-routing-alt h2 {
   font-size: 15px;
   color: white;
 }
 
-.leaflet-pseudo-fullscreen .leaflet-routing-container div.leaflet-routing-alt h3 {
+.leaflet-pseudo-fullscreen
+.leaflet-routing-container div.leaflet-routing-alt h3 {
   font-size: 15px;
 }
 
