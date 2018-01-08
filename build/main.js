@@ -2691,6 +2691,7 @@ var Icon = L.Icon;
 
 var GroupeRealtime = (function () {
     function GroupeRealtime(plateform, navCtrl, pipe, geocodingService, navParams, viewCtrl, dataManagementService, realTimeService) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.pipe = pipe;
         this.geocodingService = geocodingService;
@@ -2705,9 +2706,9 @@ var GroupeRealtime = (function () {
         this.angles = new Map();
         this.status = true;
         this.size = 60;
-        // plateform.ready().then((data) => {
-        //   this.size = Math.floor((plateform.height() - 48) / 48) + 1;
-        // });
+        plateform.ready().then(function (data) {
+            _this.size = Math.floor((plateform.height() - 48) / 48) + 1;
+        });
     }
     GroupeRealtime.prototype.ngOnInit = function () {
         this.group = this.navParams.get('group');
@@ -2734,45 +2735,69 @@ var GroupeRealtime = (function () {
                 _this.status = false;
         });
         //this.content.addScrollPadding(1); //.subscribe(($event: any) => {});
-        this.content.ionScroll.subscribe(function ($event) {
-            _this.status = true;
-            var dimensions = _this.content.getContentDimensions();
-            var scrollHeight = dimensions.scrollHeight;
-            var scrollTop = dimensions.scrollTop;
-            var contentHeight = dimensions.contentHeight;
-            var heightAndScrollTop = contentHeight + scrollTop;
-            // console.log(scrollHeight +' '+ heightAndScrollTop+' '+heightAndScrollTop);
-            if ((scrollHeight - heightAndScrollTop) <= 0 && (scrollHeight - heightAndScrollTop) >= 0 && _this.totalpage > _this.page) {
-                _this.page++;
-                _this.realTimeService.findVehiculesByGroupsId(_this.group.idGroupe, _this.size, _this.page).subscribe(function (x) {
-                    if (x.content.length > 0) {
-                        if (x.content.length < _this.size)
-                            _this.status = false;
-                        _this.vehiculeLoaded = x.content;
-                        _this.vehiculeLoaded.forEach(function (vehicule) {
-                            vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_7__objects_real_time__["b" /* RealTimeRecord */]();
-                            _this.realTimeService.getRealTimeRecord(vehicule.device.idDevice).subscribe(function (y) {
-                                vehicule.realTimeRecord = y;
-                                vehicule.realTimeRecord.vehicule = new __WEBPACK_IMPORTED_MODULE_7__objects_real_time__["b" /* RealTimeRecord */]();
-                                vehicule.realTimeRecord.vehicule = vehicule;
-                                _this.trackRealTimeRecord(vehicule.realTimeRecord);
-                            }, function (err) {
-                            });
-                        });
-                        _this.vehiculeLoaded.forEach(function (vehicule) {
-                            _this.vehicules.push(vehicule);
-                        });
-                        _this.status = false;
-                    }
-                    else {
-                        _this.status = false;
-                    }
+        // this.content.ionScroll.subscribe(($event: any) => {
+        //   this.status = true;
+        //   let dimensions = this.content.getContentDimensions();
+        //   let scrollHeight = dimensions.scrollHeight;
+        //   let scrollTop = dimensions.scrollTop;
+        //   let contentHeight = dimensions.contentHeight;
+        //   let heightAndScrollTop = contentHeight + scrollTop;
+        //   // console.log(scrollHeight +' '+ heightAndScrollTop+' '+heightAndScrollTop);
+        //   if ((scrollHeight - heightAndScrollTop) <= 0 && (scrollHeight - heightAndScrollTop) >= 0 && this.totalpage>this.page) {
+        //     this.page++;
+        //     this.realTimeService.findVehiculesByGroupsId(this.group.idGroupe, this.size, this.page).subscribe(x => {
+        //       if (x.content.length > 0) {
+        //         if (x.content.length < this.size)
+        //           this.status = false;
+        //         this.vehiculeLoaded = x.content;
+        //         this.vehiculeLoaded.forEach(vehicule => {
+        //           vehicule.realTimeRecord = new RealTimeRecord();
+        //           this.realTimeService.getRealTimeRecord(vehicule.device.idDevice).subscribe(y => {
+        //             vehicule.realTimeRecord = y;
+        //             vehicule.realTimeRecord.vehicule = new RealTimeRecord();
+        //             vehicule.realTimeRecord.vehicule = vehicule;
+        //             this.trackRealTimeRecord(vehicule.realTimeRecord);
+        //           }, (err) => {
+        //           });
+        //         })
+        //         this.vehiculeLoaded.forEach(vehicule => {
+        //           this.vehicules.push(vehicule);
+        //         });
+        //         this.status = false;
+        //       } else {
+        //         this.status = false;
+        //       }
+        //     })
+        //   }else{
+        //     this.status=false;
+        //   }
+        // });
+    };
+    GroupeRealtime.prototype.charger = function () {
+        var _this = this;
+        if (this.totalpage > this.page) {
+            this.status = true;
+            this.page++;
+            this.realTimeService.findVehiculesByGroupsId(this.group.idGroupe, this.size, this.page).subscribe(function (x) {
+                _this.vehiculeLoaded = x.content;
+                _this.vehiculeLoaded.forEach(function (vehicule) {
+                    vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_7__objects_real_time__["b" /* RealTimeRecord */]();
+                    _this.realTimeService.getRealTimeRecord(vehicule.device.idDevice).subscribe(function (y) {
+                        vehicule.realTimeRecord = y;
+                        vehicule.realTimeRecord.vehicule = new __WEBPACK_IMPORTED_MODULE_7__objects_real_time__["b" /* RealTimeRecord */]();
+                        vehicule.realTimeRecord.vehicule = vehicule;
+                        _this.trackRealTimeRecord(vehicule.realTimeRecord);
+                    }, function (err) {
+                    });
                 });
-            }
-            else {
-                _this.status = false;
-            }
-        });
+                _this.vehiculeLoaded.forEach(function (vehicule) {
+                    _this.vehicules.push(vehicule);
+                });
+            });
+        }
+        else {
+            this.status = false;
+        }
     };
     GroupeRealtime.prototype.isValidPoint = function (point) {
         if (point && point.lng !== 0 && point.lng !== 0)
@@ -2979,7 +3004,7 @@ __decorate([
 ], GroupeRealtime.prototype, "content", void 0);
 GroupeRealtime = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-        selector: 'page-group-realtime',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\group-realtime\group-realtime.html"*/'<ion-header>\n\n\n\n        <ion-navbar>\n\n          <ion-title>\n\n            <a>{{group.nom}}</a>\n\n          </ion-title>\n\n          <ion-buttons end>\n\n              <button ion-button icon-only (click)="closeModal()">\n\n                <ion-icon name="arrow-down" style="color:white"></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n        </ion-navbar>\n\n      \n\n      \n\n      </ion-header>\n\n    <ion-content style="opacity:0.82;">\n\n            <div style="font-size: 15px;border-radius:0px; margin-top: 0%;">\n\n                    <div style="width: 500%">\n\n                      <table class="table" style="width: 20%">\n\n                        <tbody>\n\n                         \n\n                            <tr>\n\n                              <td>\n\n                                <div style="overflow:auto">\n\n                                  <table class="table" frame="hsides" rules="cols" style="width: 100%;">\n\n                                   \n\n                                    <tbody style="border :colspan; text-align: center;" frame="hsides" frame="hsides" rules="all">\n\n                                      <ng-container *ngFor="let vehicule of vehicules">\n\n                                        <tr [ngClass]="{\'activeRT\': selectedDevice == vehicule.idDevice}" style="border-bottom:1pt solid black;">\n\n                                          <td width="10%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                                          \n\n                                            <img width="30 px" *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)" src="{{vehicule?.realTimeRecord?.icon}}">\n\n                                            <ion-label *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)" style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                                          </td>\n\n                                          <td width="30%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                \n\n                                            <div>\n\n                                              <b>\n\n                                                {{vehicule.matricule}}\n\n                                                <br> {{vehicule?.driver?.firstName}} {{vehicule?.driver?.lastName}}\n\n                                              </b>\n\n                                            </div>\n\n                                          </td>\n\n                                          <td width="40%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                                            <div *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                                              <b>\n\n                                                <div *ngIf="vehicule.realTimeRecord.relativePosition">\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord?.relativePosition}}\n\n                                                  </b>\n\n                                                </div>\n\n                                                <div *ngIf="!vehicule.realTimeRecord.relativePosition">\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord.geocoding}}\n\n                                                  </b>\n\n                                                </div>\n\n                                                <div>\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord?.recordTime| date:\'d-M HH:mm\'}}\n\n                                                  </b>\n\n                                                </div>\n\n                                                <div>\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord?.speed}} KM/H\n\n                                                  </b>\n\n                                                </div>\n\n                                              </b>\n\n                                            </div>\n\n                \n\n                                         \n\n                                            <div *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                                              <ion-label style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                \n\n                                            </div>\n\n                \n\n                \n\n                \n\n                \n\n                                          </td>\n\n                \n\n                                        </tr>\n\n                                      </ng-container>\n\n                                    </tbody>\n\n                                  </table>\n\n                \n\n                                </div>\n\n                              </td>\n\n                            </tr>\n\n                          \n\n                        </tbody>\n\n                        <tfoot>\n\n                           \n\n                          <div ><img *ngIf="status==true" src="assets/icons/loading2.gif" style="width: 35px;margin-left: 45%;"/></div>\n\n                          \n\n                        </tfoot>\n\n                      </table>\n\n                    </div>\n\n                  </div> \n\n    </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\group-realtime\group-realtime.html"*/,
+        selector: 'page-group-realtime',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\group-realtime\group-realtime.html"*/'<ion-header>\n\n\n\n        <ion-navbar>\n\n          <ion-title>\n\n            <a>{{group.nom}}</a>\n\n          </ion-title>\n\n          <ion-buttons end>\n\n              <button ion-button icon-only (click)="closeModal()">\n\n                <ion-icon name="arrow-down" style="color:white"></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n        </ion-navbar>\n\n      \n\n      \n\n      </ion-header>\n\n    <ion-content style="opacity:0.82;">\n\n            <div style="font-size: 15px;border-radius:0px; margin-top: 0%;">\n\n                    <div style="width: 500%">\n\n                      <table class="table" style="width: 20%">\n\n                        <tbody>\n\n                         \n\n                            <tr>\n\n                              <td>\n\n                                <div style="overflow:auto">\n\n                                  <table class="table" frame="hsides" rules="cols" style="width: 100%;">\n\n                                   \n\n                                    <tbody style="border :colspan; text-align: center;" frame="hsides" frame="hsides" rules="all">\n\n                                      <ng-container *ngFor="let vehicule of vehicules">\n\n                                        <tr [ngClass]="{\'activeRT\': selectedDevice == vehicule.idDevice}" style="border-bottom:1pt solid black;">\n\n                                          <td width="10%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                                          \n\n                                            <img width="30 px" *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)" src="{{vehicule?.realTimeRecord?.icon}}">\n\n                                            <ion-label *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)" style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                                          </td>\n\n                                          <td width="30%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                \n\n                                            <div>\n\n                                              <b>\n\n                                                {{vehicule.matricule}}\n\n                                                <br> {{vehicule?.driver?.firstName}} {{vehicule?.driver?.lastName}}\n\n                                              </b>\n\n                                            </div>\n\n                                          </td>\n\n                                          <td width="40%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                                            <div *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                                              <b>\n\n                                                <div *ngIf="vehicule.realTimeRecord.relativePosition">\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord?.relativePosition}}\n\n                                                  </b>\n\n                                                </div>\n\n                                                <div *ngIf="!vehicule.realTimeRecord.relativePosition">\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord.geocoding}}\n\n                                                  </b>\n\n                                                </div>\n\n                                                <div>\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord?.recordTime| date:\'d-M HH:mm\'}}\n\n                                                  </b>\n\n                                                </div>\n\n                                                <div>\n\n                                                  <b>\n\n                                                    {{vehicule?.realTimeRecord?.speed}} KM/H\n\n                                                  </b>\n\n                                                </div>\n\n                                              </b>\n\n                                            </div>\n\n                \n\n                                         \n\n                                            <div *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                                              <ion-label style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                \n\n                                            </div>\n\n                \n\n                \n\n                \n\n                \n\n                                          </td>\n\n                \n\n                                        </tr>\n\n                                      </ng-container>\n\n                                    </tbody>\n\n                                  </table>\n\n                \n\n                                </div>\n\n                              </td>\n\n                            </tr>\n\n                          \n\n                        </tbody>\n\n                        <tfoot>\n\n                           <button *ngIf="status==true" (click)="charger()"> plus ...</button>\n\n                          <!-- <div ><img *ngIf="status==true" src="assets/icons/loading2.gif" style="width: 35px;margin-left: 45%;"/></div> -->\n\n                          \n\n                        </tfoot>\n\n                      </table>\n\n                    </div>\n\n                  </div> \n\n    </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\group-realtime\group-realtime.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__angular_common__["d" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__angular_common__["d" /* DecimalPipe */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_params__["a" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_params__["a" /* NavParams */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _k || Object])
 ], GroupeRealtime);
