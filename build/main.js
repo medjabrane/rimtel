@@ -2691,7 +2691,6 @@ var Icon = L.Icon;
 
 var GroupeRealtime = (function () {
     function GroupeRealtime(plateform, navCtrl, pipe, geocodingService, navParams, viewCtrl, dataManagementService, realTimeService) {
-        var _this = this;
         this.navCtrl = navCtrl;
         this.pipe = pipe;
         this.geocodingService = geocodingService;
@@ -2705,10 +2704,10 @@ var GroupeRealtime = (function () {
         this.oldRealTimeRecords = null;
         this.angles = new Map();
         this.status = true;
-        this.size = 10;
-        plateform.ready().then(function (data) {
-            _this.size = Math.floor((plateform.height() - 48) / 48) + 1;
-        });
+        this.size = 60;
+        // plateform.ready().then((data) => {
+        //   this.size = Math.floor((plateform.height() - 48) / 48) + 1;
+        // });
     }
     GroupeRealtime.prototype.ngOnInit = function () {
         this.group = this.navParams.get('group');
