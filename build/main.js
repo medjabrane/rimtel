@@ -328,6 +328,9 @@ var Historical = (function () {
     //   });
     // }
     Historical.prototype.openmodalrealtime = function () {
+        this.previousPathdrawn = false;
+        this.pathDrawn = false;
+        this.clearPolylines();
         this.groupmodal.present();
     };
     // All records real time method
@@ -404,21 +407,21 @@ var Historical = (function () {
                 });
             }
             else {
-                var alert_1 = this.alertCtrl.create({
+                var alert = this.alertCtrl.create({
                     title: 'Attention',
                     subTitle: 'Veuillez activer GPS ',
                     buttons: ['Ok']
                 });
-                alert_1.present();
+                alert.present();
             }
         }
         else {
-            var alert_2 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Itinéraire',
                 subTitle: 'Veuillez choisir un véhicule ',
                 buttons: ['Ok']
             });
-            alert_2.present();
+            alert.present();
         }
         // if(this.itineaire){
         //   this.itineaire=false;
@@ -556,12 +559,12 @@ var Historical = (function () {
             });
         }
         else {
-            var alert_3 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'POI',
                 subTitle: 'Veuillez choisir un véhicule ',
                 buttons: ['Ok']
             });
-            alert_3.present();
+            alert.present();
         }
     };
     //remove polylines and markers from map
@@ -851,12 +854,12 @@ var Historical = (function () {
             paths: this.paths
         });
         if (this.paths == null) {
-            var alert_4 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_4.present();
+            alert.present();
         }
         else {
             pathsListModal.present();
@@ -1042,12 +1045,12 @@ var Historical = (function () {
                 .catch(function () { return console.log('Error launching dialer'); });
         }
         else {
-            var alert_5 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Error',
                 subTitle: 'Numéro introuvable',
                 buttons: ['Ok']
             });
-            alert_5.present();
+            alert.present();
         }
     };
     //draw all point interests
@@ -1120,12 +1123,12 @@ var Historical = (function () {
                     _this.loader.present();
                     if (form.startDate == null && form.endDate == null) {
                         _this.loader.dismiss();
-                        var alert_6 = _this.alertCtrl.create({
+                        var alert = _this.alertCtrl.create({
                             title: 'Error',
                             subTitle: 'Informations erronées',
                             buttons: ['Ok']
                         });
-                        alert_6.present();
+                        alert.present();
                     }
                     _this.allPaths = _this.historicalService.getAllPaths(_this.selectedDevice, {
                         startDate: firstDateTime,
@@ -1222,12 +1225,12 @@ var Historical = (function () {
                     _this.loader.present();
                     if (form.startDate == null && form.endDate == null) {
                         _this.loader.dismiss();
-                        var alert_7 = _this.alertCtrl.create({
+                        var alert = _this.alertCtrl.create({
                             title: 'Error',
                             subTitle: 'Informations erronées',
                             buttons: ['Ok']
                         });
-                        alert_7.present();
+                        alert.present();
                     }
                     _this.allPaths = _this.historicalService.getAllStops(_this.selectedDevice, {
                         startDate: firstDateTime,
@@ -1283,12 +1286,12 @@ var Historical = (function () {
                     _this.loader.present();
                     if (form.startDate == null && form.endDate == null) {
                         _this.loader.dismiss();
-                        var alert_8 = _this.alertCtrl.create({
+                        var alert = _this.alertCtrl.create({
                             title: 'Error',
                             subTitle: 'Informations erronées',
                             buttons: ['Ok']
                         });
-                        alert_8.present();
+                        alert.present();
                     }
                     _this.AllPaths = _this.historicalService.getAllMileages(_this.selectedDevice, {
                         startDate: startHour - (24 * 60 * 60 * 1000),
@@ -1308,12 +1311,12 @@ var Historical = (function () {
             });
         }
         else {
-            var alert_9 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Veuillez choisir un véhicule ',
                 buttons: ['Ok']
             });
-            alert_9.present();
+            alert.present();
         }
     };
     //draw arret
@@ -1364,12 +1367,12 @@ var Historical = (function () {
             totalMileage: this.totalMileage
         });
         if (this.mileages == null) {
-            var alert_10 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_10.present();
+            alert.present();
         }
         else {
             mileageListModal.present();
@@ -1458,12 +1461,12 @@ var Historical = (function () {
             stops: this.stops
         });
         if (this.stops == null) {
-            var alert_11 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_11.present();
+            alert.present();
         }
         else {
             stopListModal.present();
@@ -1494,7 +1497,7 @@ var Historical = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["ViewChild"])('mycontent'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */]) === "function" && _a || Object)
 ], Historical.prototype, "nav", void 0);
 Historical = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
@@ -1510,11 +1513,12 @@ Historical = __decorate([
                     Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["animate"])('500ms', Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["style"])({ transform: 'translateY(100%)', 'opacity': 0 }))
                 ])
             ])
-        ],template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<!-- margin-top:20px; -->\n\n<ion-header style=" height:48px;margin-top:20px;">\n\n  <!--margin-top:20px;-->\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;">\n\n    <button ion-fab mini outline style="margin-top:0px;margin-left: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==true" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="resultopened==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openStopResult==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openMileageResult==true" style="margin-top:-5px;margin-left:35px;">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left: -5px !important;">\n\n    <button ion-fab mini outline style="margin-right: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==false" (click)="logout()">\n\n      <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <!-- <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab top right style="margin-top:-7px;">\n\n    <button ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;margin-right: -5px !important;background-color:rgb(70, 238, 14)">\n\n      <ion-icon name="call"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab> -->\n\n  <ion-title>\n\n    <button ion-button round style="background-color:rgba(0,0,0,0.2);color:white;font-size:5vw;width:8 0%;height:100%;" (click)="openmodalrealtime()">{{matricule}}</button>\n\n  </ion-title>\n\n\n\n</ion-header>\n\n\n\n<ion-content [ngStyle]="{ \'margin-top\': marginTop} ">\n\n  <ion-grid style="padding-top:20px;width:33%;margin-left:0px;" *ngIf="fullscreen">\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        Historique </button>\n\n    </ion-row>\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        G. Parc </button>\n\n    </ion-row> \n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:90%;background-color:rgba(70, 238, 14, 0.4);color:#FFF;height:30px;font-size: 4vw;">Lancement</button>\n\n    </ion-row>\n\n    <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:90%;background-color:rgba(242, 11, 11, 0.4);color:#FFF;height:30px;font-size: 4vw;">Arrêt </button>\n\n  </ion-grid>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)" [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab> -->\n\n  <div class="leaflet-top leaflet-right" style="margin-top:85px; margin-right:2px;">\n\n    <div class="pois-toggle " (click)="drawPointInterests()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;  border-radius: 5px;">\n\n          <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="openPoiModal()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-pin" md="md-pin"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    \n\n    <!-- <div class="pois-toggle " (click)="drawpath()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-car" md="md-car"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="FullScreen()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="md-contract" md="md-contract"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div> -->\n\n  </div>\n\n  <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 94%!important; top: 6.5% !important;"></div>\n\n</ion-content>\n\n<ion-footer *ngIf="show" [@myAnimation] style="text-align:left"> \n\n    \n\n      <ion-navbar style="height:80px" >\n\n          <ion-label style="font-size:11.5px;padding-left:10px;"  >{{relativeposition}}</ion-label>\n\n          <ion-fab top right style="align-items:center"  (click)="drawpath()" >\n\n            <button ion-fab mini>  <ion-icon ios="ios-car-outline"></ion-icon></button> \n\n          </ion-fab>\n\n          <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:22%;height:30px;font-size: 4vw;">\n\n              Historique </button>\n\n          <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:22%;height:30px;font-size: 4vw;">\n\n              G.Park \n\n          </button>\n\n      </ion-navbar>\n\n       \n\n</ion-footer> \n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/
+        ],template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<!-- margin-top:20px; -->\n\n<ion-header style=" height:48px;margin-top:20px;">\n\n  <!--margin-top:20px;-->\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;">\n\n    <button ion-fab mini outline style="margin-top:0px;margin-left: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==true" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="resultopened==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openStopResult==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openMileageResult==true" style="margin-top:-5px;margin-left:35px;">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left: -5px !important;">\n\n    <button ion-fab mini outline style="margin-right: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==false" (click)="logout()">\n\n      <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <!-- <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab top right style="margin-top:-7px;">\n\n    <button ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;margin-right: -5px !important;background-color:rgb(70, 238, 14)">\n\n      <ion-icon name="call"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab> -->\n\n  <ion-title>\n\n    <button ion-button round style="background-color:rgba(0,0,0,0.2);color:white;font-size:5vw;width:8 0%;height:100%;" (click)="openmodalrealtime()">{{matricule}}</button>\n\n  </ion-title>\n\n\n\n</ion-header>\n\n\n\n<ion-content [ngStyle]="{ \'margin-top\': marginTop} ">\n\n  <ion-grid style="padding-top:20px;width:33%;margin-left:0px;" *ngIf="fullscreen">\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        Historique </button>\n\n    </ion-row>\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        G. Parc </button>\n\n    </ion-row> \n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:90%;background-color:rgba(70, 238, 14, 0.4);color:#FFF;height:30px;font-size: 4vw;">Lancement</button>\n\n    </ion-row>\n\n    <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:90%;background-color:rgba(242, 11, 11, 0.4);color:#FFF;height:30px;font-size: 4vw;">Arrêt </button>\n\n  </ion-grid>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab top left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab top left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)" [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab> -->\n\n  <div class="leaflet-top leaflet-right" style="margin-top:85px; margin-right:2px;">\n\n    <div class="pois-toggle " (click)="drawPointInterests()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;  border-radius: 5px;">\n\n          <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="openPoiModal()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-pin" md="md-pin"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    \n\n    <!-- <div class="pois-toggle " (click)="drawpath()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-car" md="md-car"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="FullScreen()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="md-contract" md="md-contract"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div> -->\n\n  </div>\n\n  <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 94%!important; top: 6.5% !important;"></div>\n\n</ion-content>\n\n<ion-footer *ngIf="show" [@myAnimation] style="text-align:left"> \n\n    \n\n      <ion-navbar style="height:80px" >\n\n          <ion-label style="font-size:11.5px;padding-left:10px;"  >{{relativeposition}}</ion-label>\n\n          <ion-fab top right style="align-items:center"  (click)="drawpath()" >\n\n            <button ion-fab mini>  <ion-icon ios="ios-car-outline"></ion-icon></button> \n\n          </ion-fab>\n\n          <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:22%;height:30px;font-size: 4vw;">\n\n              Historique </button>\n\n          <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:22%;height:30px;font-size: 4vw;">\n\n              G.Park \n\n          </button>\n\n      </ion-navbar>\n\n       \n\n</ion-footer> \n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_27_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__["a" /* LaunchNavigator */], __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_7__angular_common__["DecimalPipe"], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* ModalController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_27_ionic_angular_util_events__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_27_ionic_angular_util_events__["a" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* MenuController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__["a" /* LaunchNavigator */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__["a" /* LaunchNavigator */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* ViewController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_7__angular_common__["DecimalPipe"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_common__["DecimalPipe"]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ToastController */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _s || Object, typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */]) === "function" && _t || Object, typeof (_u = typeof __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */]) === "function" && _u || Object, typeof (_v = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* LoadingController */]) === "function" && _v || Object, typeof (_w = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* ModalController */]) === "function" && _w || Object, typeof (_x = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */]) === "function" && _x || Object, typeof (_y = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["l" /* NavParams */]) === "function" && _y || Object, typeof (_z = typeof __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]) === "function" && _z || Object])
 ], Historical);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
 //# sourceMappingURL=historical.js.map
 
 /***/ }),
@@ -1574,12 +1578,7 @@ var HomePage = (function () {
         this.searchWord = '';
         this.loginTest = null;
         this.mdpTest = null;
-        this.splash = true;
         //recuperation current user
-        console.log(navParams.get('splash'));
-        if (navParams.get('splash')) {
-            this.splash = false;
-        }
         this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
         if (this.currentuser) {
             this.login = this.currentuser.username;
@@ -1587,12 +1586,6 @@ var HomePage = (function () {
             this.Signing();
         }
     }
-    HomePage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        setTimeout(function () {
-            _this.splash = false;
-        }, 4000);
-    };
     //Signing method
     HomePage.prototype.Signing = function () {
         var _this = this;
@@ -1603,9 +1596,7 @@ var HomePage = (function () {
             _this.historicalService.currentuser = currentUser;
             _this.dataManagementService.currentuser = currentUser;
             localStorage.setItem('currentuser', JSON.stringify(currentUser));
-            setTimeout(function () {
-                _this.goToRt();
-            }, 2000);
+            _this.goToRt();
         }, function () {
             var toast = _this.toastController.create({
                 message: 'Authentification Echouée!',
@@ -1623,7 +1614,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/'<div id="custom-overlay" [style.display]="splash ? \'flex\': \'none\'">\n\n  <div class="flb">\n\n    <div class="Aligner-item Aligner-item--top"></div>\n\n    <img src="../assets/img/logorim.jpg">\n\n    <div class="Aligner-item Aligner-item--bottom"></div>\n\n  </div>\n\n</div>  \n\n<ion-header>\n\n  <ion-navbar >\n\n    <ion-title > <a>Bienvenue</a></ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="page-login">\n\n \n\n  <ion-card class="login-card">\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n       <ion-item>\n\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n         \n\n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe"></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n\n      Connexion\n\n      </button>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n       <ion-title> <img src="assets/img/logorim.jpg" height="60" /></ion-title>\n\n    </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/' <ion-header>\n\n  <ion-navbar >\n\n    <ion-title > <a>Bienvenue</a></ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="page-login">\n\n \n\n  <ion-card class="login-card">\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n       <ion-item>\n\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n         \n\n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe"></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n\n      Connexion\n\n      </button>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n       <ion-title> <img src="assets/img/logorim.jpg" height="60" /></ion-title>\n\n    </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_9_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular_navigation_nav_params__["a" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_7__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_login__["a" /* SigningService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */]])
 ], HomePage);
@@ -5041,7 +5032,7 @@ var MyApp = (function () {
     //deconnexion
     MyApp.prototype.logout = function () {
         localStorage.removeItem('currentuser');
-        this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */], { splash: true });
+        this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */]);
     };
     return MyApp;
 }());
