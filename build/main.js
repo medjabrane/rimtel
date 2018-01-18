@@ -36,68 +36,116 @@ var VehiculeService = (function () {
         this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
     }
     VehiculeService.prototype.add = function (vehicule, idDevice, idGroups, idDriver, deviceNumber) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({
+            headers: headers
+        });
         var body = JSON.stringify(vehicule);
         return this._http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idDevice=' + idDevice + '&idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.update = function (vehicule, idGroups, idDriver, deviceNumber) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({
+            headers: headers
+        });
         var body = JSON.stringify(vehicule);
         return this._http.put(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.addGroup = function (name) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/byName/?groupeName=' + name, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/byName/?groupeName=' + name, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.addDriver = function (name) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/byName/?driverName=' + name, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/byName/?driverName=' + name, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getGroupsVehicule = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/groups/' + id, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/groups/' + id, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getOne = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.assignement = function (idVehicule, idDriver) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/assignement/?idVehicule=' + idVehicule + '&idDriver=' + idDriver, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/assignement/?idVehicule=' + idVehicule + '&idDriver=' + idDriver, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getListVehicules = function (page, size) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/list' + '?page=' + page + '&size=' + size, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/list' + '?page=' + page + '&size=' + size, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.delete = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.delete(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.delete(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getGroupsLabel = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/labels', { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/labels', {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getDriversLabel = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/labels', { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/labels', {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getDevicesLabel = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
         headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'devices/labels', { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'devices/labels', {
+            headers: headers
+        }).map(function (res) { return res.json(); });
     };
     VehiculeService.prototype.getVehicule = function (idVehicule) {
         if (this.vehicules.length != 0) {
@@ -110,9 +158,10 @@ var VehiculeService = (function () {
 }());
 VehiculeService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], VehiculeService);
 
+var _a;
 //# sourceMappingURL=vehicule.service.js.map
 
 /***/ }),
@@ -155,7 +204,7 @@ var Driver = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_global_config__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_real_time__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__stop_list_stop_list__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__stop_list_stop_list__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__objects_data_management__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(10);
@@ -163,23 +212,23 @@ var Driver = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_map_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_global_config__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_home__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__groups_page_groups_page__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__groups_page_groups_page__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__objects_real_time__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__poi_poi__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_storage__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__mileage_mileage__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__gestion_park_gest_park__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__mileage_mileage__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__gestion_park_gest_park__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ionic_angular_util_events__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -655,7 +704,7 @@ var Historical = (function () {
         var icon;
         var marker;
         var popup;
-        console.log();
+        console.log(realTimeRecord);
         /* if (!this.dataManagementService.pointInterests) {
            this.dataManagementService.getAllPointInterests().subscribe(pointInterests => {
              this.dataManagementService.pointInterests = pointInterests;
@@ -737,11 +786,15 @@ var Historical = (function () {
             iconAnchor: [-2, 30],
             popupAnchor: [10, -25]
         });
+        popup = popup + '<hr><b>' + realTimeRecord.geocoding + '</b><br>';
         this.geocodingService.inverseGeoconding(realTimeRecord.coordinate.lat, realTimeRecord.coordinate.lng, 18).subscribe(function (adress) {
             //  popup = popup + '<hr><b>' + adress.display_name + '</b><br>';
             if (realTimeRecord.relativePosition) {
                 //popup = popup + '<hr><center><span class="leaflet-pelias-layer-icon-container"><div class="leaflet-pelias-layer-icon leaflet-pelias-layer-icon-point"></div></span><strong>' + realTimeRecord.relativePosition + '</strong></center>';
                 _this.relativeposition = realTimeRecord.relativePosition;
+            }
+            else {
+                _this.relativeposition = realTimeRecord.geocoding;
             }
             // realTimeRecord.geocoding = this.getGeocoding(adress.address);
             // realTimeRecord.geocodingDetails = adress.display_name;
@@ -756,7 +809,6 @@ var Historical = (function () {
             if (realTimeRecord.idRealTimeRecord == _this.selectedDevice) {
                 if (realTimeRecord.vehicule.driver) {
                     _this.driverphone = realTimeRecord.vehicule.driver.telephone;
-                    console.log(_this.driverphone);
                 }
                 if (_this.pathDrawn == false && realTimeRecord.speed > 0) {
                     _this.displayCurrentPath(realTimeRecord.idRealTimeRecord);
@@ -1513,7 +1565,7 @@ Historical = __decorate([
                     Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["animate"])('500ms', Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["style"])({ transform: 'translateY(100%)', 'opacity': 0 }))
                 ])
             ])
-        ],template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<!-- margin-top:20px; -->\n\n<ion-header style=" height:48px;margin-top:20px;">\n\n  <!--margin-top:20px;-->\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;">\n\n    <button ion-fab mini outline style="margin-top:0px;margin-left: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==true" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="resultopened==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openStopResult==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openMileageResult==true" style="margin-top:-5px;margin-left:35px;">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left: -5px !important;">\n\n    <button ion-fab mini outline style="margin-right: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==false" (click)="logout()">\n\n      <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <!-- <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab top right style="margin-top:-7px;">\n\n    <button ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;margin-right: -5px !important;background-color:rgb(70, 238, 14)">\n\n      <ion-icon name="call"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab> -->\n\n  <ion-title>\n\n    <button ion-button round style="background-color:rgba(0,0,0,0.2);color:white;font-size:5vw;width:8 0%;height:100%;" (click)="openmodalrealtime()">{{matricule}}</button>\n\n  </ion-title>\n\n\n\n</ion-header>\n\n\n\n<ion-content [ngStyle]="{ \'margin-top\': marginTop} ">\n\n  <ion-grid style="padding-top:20px;width:33%;margin-left:0px;" *ngIf="fullscreen">\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        Historique </button>\n\n    </ion-row>\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        G. Parc </button>\n\n    </ion-row> \n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:90%;background-color:rgba(70, 238, 14, 0.4);color:#FFF;height:30px;font-size: 4vw;">Lancement</button>\n\n    </ion-row>\n\n    <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:90%;background-color:rgba(242, 11, 11, 0.4);color:#FFF;height:30px;font-size: 4vw;">Arrêt </button>\n\n  </ion-grid>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab top left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab top left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)" [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab> -->\n\n  <div class="leaflet-top leaflet-right" style="margin-top:85px; margin-right:2px;">\n\n    <div class="pois-toggle " (click)="drawPointInterests()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;  border-radius: 5px;">\n\n          <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="openPoiModal()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-pin" md="md-pin"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    \n\n    <!-- <div class="pois-toggle " (click)="drawpath()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-car" md="md-car"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="FullScreen()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="md-contract" md="md-contract"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div> -->\n\n  </div>\n\n  <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 94%!important; top: 6.5% !important;"></div>\n\n</ion-content>\n\n<ion-footer *ngIf="show" [@myAnimation] style="text-align:left"> \n\n    \n\n      <ion-navbar style="height:80px" >\n\n          <ion-label style="font-size:11.5px;padding-left:10px;"  >{{relativeposition}}</ion-label>\n\n          <ion-fab top right style="align-items:center"  (click)="drawpath()" >\n\n            <button ion-fab mini>  <ion-icon ios="ios-car-outline"></ion-icon></button> \n\n          </ion-fab>\n\n          <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:22%;height:30px;font-size: 4vw;">\n\n              Historique </button>\n\n          <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:22%;height:30px;font-size: 4vw;">\n\n              G.Park \n\n          </button>\n\n      </ion-navbar>\n\n       \n\n</ion-footer> \n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/
+        ],template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<!-- margin-top:20px; -->\n\n<ion-header style=" height:48px;margin-top:20px;">\n\n  <!--margin-top:20px;-->\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;">\n\n    <button ion-fab mini outline style="margin-top:0px;margin-left: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==true" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="resultopened==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openStopResult==true" style="margin-top:-5px;margin-left:35px">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab left *ngIf="openMileageResult==true" style="margin-top:-5px;margin-left:35px;">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left: -5px !important;">\n\n    <button ion-fab mini outline style="margin-right: -5px !important;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;"\n\n      *ngIf="Root==false" (click)="logout()">\n\n      <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n\n\n  <!-- <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab top right style="margin-top:-7px;">\n\n    <button ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;margin-right: -5px !important;background-color:rgb(70, 238, 14)">\n\n      <ion-icon name="call"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab> -->\n\n  <ion-title>\n\n    <button ion-button round style="background-color:rgba(0,0,0,0.2);color:white;font-size:5vw;width:8 0%;height:100%;" (click)="openmodalrealtime()">{{matricule}}</button>\n\n  </ion-title>\n\n\n\n</ion-header>\n\n\n\n<ion-content [ngStyle]="{ \'margin-top\': marginTop} ">\n\n  <ion-grid style="padding-top:20px;width:33%;margin-left:0px;" *ngIf="fullscreen">\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openFormModal()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        Historique </button>\n\n    </ion-row>\n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="openParc()" color="light" style="background-color:rgba(0,0,0,0.4);width:90%;height:30px;font-size: 4vw;">\n\n        G. Parc </button>\n\n    </ion-row> \n\n    <ion-row>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:90%;background-color:rgba(70, 238, 14, 0.4);color:#FFF;height:30px;font-size: 4vw;">Lancement</button>\n\n    </ion-row>\n\n    <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:90%;background-color:rgba(242, 11, 11, 0.4);color:#FFF;height:30px;font-size: 4vw;">Arrêt </button>\n\n  </ion-grid>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab top left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab top left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)" [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <!-- <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab> -->\n\n  <div class="leaflet-top leaflet-right" style="margin-top:85px; margin-right:2px;">\n\n    <div class="pois-toggle " (click)="drawPointInterests()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;  border-radius: 5px;">\n\n          <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="openPoiModal()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-pin" md="md-pin"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    \n\n    <!-- <div class="pois-toggle " (click)="drawpath()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="ios-car" md="md-car"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="pois-toggle " (click)="FullScreen()">\n\n      <div class=" leaflet-bar leaflet-control">\n\n        <button title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;    border-radius: 5px;">\n\n          <ion-icon ios="md-contract" md="md-contract"></ion-icon>\n\n        </button>\n\n      </div>\n\n    </div> -->\n\n  </div>\n\n  <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 94%!important; top: 6.5% !important;"></div>\n\n</ion-content>\n\n<ion-footer *ngIf="show" [@myAnimation] style="text-align:left;"> \n\n    \n\n      <ion-navbar style="height:80px" >\n\n          <ion-label style="font-size:11.5px;padding-left:10px;"  >  <ion-icon ios="ios-pin" md="md-pin"></ion-icon> {{relativeposition}}</ion-label>\n\n          <ion-fab top right style="align-items:center;margin-right:50px;"  (click)="drawpath()" >\n\n            <button ion-fab mini style="background-color:#7dd8cf">  <ion-icon ios="ios-car-outline"></ion-icon></button> \n\n          </ion-fab>\n\n          <button ion-button round outline strong (click)="openFormModal()"  style="width:22%;height:30px;font-size: 4vw;">\n\n              Historique </button>\n\n          <button ion-button round outline strong (click)="openParc()" color="secondary" style="width:22%;height:30px;font-size: 4vw;">\n\n              G.Park \n\n          </button>\n\n        \n\n            <!-- Real floating action button, fixed. It will not scroll with the content -->\n\n           \n\n      </ion-navbar>\n\n      <ion-fab top right >\n\n        <button ion-fab mini>  <ion-icon ios="ios-power" md="md-power"></ion-icon></button>\n\n        <ion-fab-list side="top">\n\n          <button ion-fab color="danger" (click)="AlertArretMoteur(selectedDevice)" > <ion-icon ios="ios-square" md="md-square"></ion-icon></button>\n\n          <button ion-fab color="secondary" (click)="AlertLancementMoteur(selectedDevice)" > <ion-icon ios="ios-play" md="md-play"></ion-icon></button>\n\n        </ion-fab-list>\n\n      </ion-fab>\n\n       \n\n</ion-footer> \n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_27_ionic_angular_util_events__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_27_ionic_angular_util_events__["a" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* MenuController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__["a" /* LaunchNavigator */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_25__ionic_native_launch_navigator__["a" /* LaunchNavigator */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* ViewController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_7__angular_common__["DecimalPipe"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_common__["DecimalPipe"]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ToastController */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _s || Object, typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */]) === "function" && _t || Object, typeof (_u = typeof __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */]) === "function" && _u || Object, typeof (_v = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* LoadingController */]) === "function" && _v || Object, typeof (_w = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* ModalController */]) === "function" && _w || Object, typeof (_x = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavController */]) === "function" && _x || Object, typeof (_y = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["l" /* NavParams */]) === "function" && _y || Object, typeof (_z = typeof __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]) === "function" && _z || Object])
 ], Historical);
@@ -1532,7 +1584,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__historical_historical__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login__ = __webpack_require__(284);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_real_time_service__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_historical_service__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_data_management_service__ = __webpack_require__(38);
@@ -1673,12 +1725,12 @@ webpackEmptyAsyncContext.id = 162;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload__ = __webpack_require__(603);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__carburant_form_carburant_form__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__carburant_form_carburant_form__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic_angular_components_modal_modal_controller__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ionic_angular_navigation_view_controller__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ionic_angular_navigation_nav_controller__ = __webpack_require__(34);
@@ -1720,7 +1772,7 @@ var Carburant = (function () {
         this.idVehicule = 0;
         this.listFuels = null;
         this.formData = new FormData();
-        this.fuel = new __WEBPACK_IMPORTED_MODULE_3__model_index__["c" /* Fueling */]();
+        this.fuel = new __WEBPACK_IMPORTED_MODULE_3__model_index__["b" /* Fueling */]();
         this.date = new Date();
         this.showUpdate = false;
         this.idProvider = 0;
@@ -1734,7 +1786,7 @@ var Carburant = (function () {
         this.indexFile = -1;
         this.item = null;
         this.dns = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["a" /* dns */];
-        this.dateIntervale = new __WEBPACK_IMPORTED_MODULE_3__model_index__["b" /* DateInterval */]();
+        this.dateIntervale = new __WEBPACK_IMPORTED_MODULE_3__model_index__["a" /* DateInterval */]();
         this.idVehicule = navParams.data.idDevice.idVehicule;
         this.matricule = navParams.data.matricule;
     }
@@ -1856,7 +1908,7 @@ var Carburant = (function () {
                     _this.paymentTypes = _this.paymentTypes.filter(function (type) { return type.id !== response.type.id; });
                     _this.paymentTypes.push(response.type);
                     _this.fuelProviders = _this.fuelProviders.filter(function (provider) { return provider.id !== response.idProvider; });
-                    var provider = new __WEBPACK_IMPORTED_MODULE_3__model_index__["d" /* Provider */]();
+                    var provider = new __WEBPACK_IMPORTED_MODULE_3__model_index__["c" /* Provider */]();
                     provider.id = response.idProvider;
                     provider.name = response.providerName;
                     _this.fuelProviders.push(provider);
@@ -1875,12 +1927,12 @@ var Carburant = (function () {
         fuelmodal.onDidDismiss(function (data) {
             if (data) {
                 _this.fuel.operationTime = _this.date.getTime();
-                _this.fuelingService.add(data.fuel, data.idVehicule, data.idProvider, data.idType, data.providerName, data.typeName).subscribe(function (response) {
+                _this.fuelingService.add(data.fuel, _this.idVehicule, data.idProvider, data.idType, data.providerName, data.typeName).subscribe(function (response) {
                     _this.listFuels.push(response);
                     _this.paymentTypes = _this.paymentTypes.filter(function (type) { return type.id !== response.type.id; });
                     _this.paymentTypes.push(response.type);
                     _this.fuelProviders = _this.fuelProviders.filter(function (provider) { return provider.id !== response.idProvider; });
-                    var provider = new __WEBPACK_IMPORTED_MODULE_3__model_index__["d" /* Provider */]();
+                    var provider = new __WEBPACK_IMPORTED_MODULE_3__model_index__["c" /* Provider */]();
                     provider.id = response.idProvider;
                     provider.name = response.providerName;
                     _this.fuelProviders.push(provider);
@@ -1889,18 +1941,31 @@ var Carburant = (function () {
             }
         });
     };
+    Carburant.prototype.confirmDelete = function (fuel) {
+        this.delete(fuel.id);
+    };
+    Carburant.prototype.delete = function (id) {
+        var _this = this;
+        this.fuelingService.delete(id).subscribe(function (response) {
+            if (response) {
+                _this.listFuels = _this.listFuels.filter(function (fuel) { return fuel.id !== id; });
+            }
+            else { }
+        }, function () { });
+    };
     return Carburant;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["ViewChild"])('mycontent'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_11_ionic_angular_navigation_nav_controller__["a" /* NavController */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_11_ionic_angular_navigation_nav_controller__["a" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11_ionic_angular_navigation_nav_controller__["a" /* NavController */]) === "function" && _a || Object)
 ], Carburant.prototype, "nav", void 0);
 Carburant = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant.html"*/'<ion-header>\n\n    <ion-navbar style="height:48px" hideBackButton="true">\n\n      <ion-title>\n\n        <span style="color:white">Carburant</span>\n\n      </ion-title>\n\n      <ion-buttons left>\n\n          <button ion-button icon-only (click)="closeModal()">\n\n            <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n    </ion-navbar>\n\n   \n\n  </ion-header>\n\n  <ion-content>\n\n    \n\n      <ion-card>\n\n          <ion-list>\n\n            <ion-row>\n\n              <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n               Date\n\n              </ion-col>\n\n              <br>\n\n              <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n              Quatité\n\n              </ion-col>\n\n              <br>\n\n              <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n               Coût\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-list>\n\n        </ion-card>\n\n        <ion-card *ngFor="let fuel of listFuels;let i = index">\n\n            <ion-list>\n\n              <ion-row (click)="presentConfirm(fuel,i)">\n\n                <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n                    {{fuel.operationTime | date: \'yyyy-MM-dd HH:mm:ss\'}}\n\n                </ion-col>\n\n                <br>\n\n                <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n                    {{fuel.quantity}}\n\n                </ion-col>\n\n                <br>\n\n                <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n                    {{precisionRound(fuel.cost,2)}}\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-list>\n\n          </ion-card>\n\n          <ion-fab right bottom>\n\n            <button ion-fab (click)="addFuel()" ><ion-icon name="add"></ion-icon></button>\n\n          </ion-fab>\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__["a" /* FuelingService */], __WEBPACK_IMPORTED_MODULE_12_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_10_ionic_angular_navigation_view_controller__["a" /* ViewController */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_9_ionic_angular_components_modal_modal_controller__["a" /* ModalController */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__["a" /* FuelingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__["a" /* FuelingService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_12_ionic_angular_util_events__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_12_ionic_angular_util_events__["a" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_10_ionic_angular_navigation_view_controller__["a" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10_ionic_angular_navigation_view_controller__["a" /* ViewController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_9_ionic_angular_components_modal_modal_controller__["a" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ionic_angular_components_modal_modal_controller__["a" /* ModalController */]) === "function" && _g || Object])
 ], Carburant);
 
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=carburant.js.map
 
 /***/ }),
@@ -1930,11 +1995,11 @@ webpackEmptyAsyncContext.id = 205;
 /* unused harmony export Group */
 /* unused harmony export RunningDocumentInfo */
 /* unused harmony export RunningDocument */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Provider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Provider; });
 /* unused harmony export Type */
 /* unused harmony export TypeOil */
 /* unused harmony export LastDates */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Fueling; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Fueling; });
 /* unused harmony export FuelingInfo */
 /* unused harmony export OilChange */
 /* unused harmony export OilChangeInfo */
@@ -1944,8 +2009,8 @@ webpackEmptyAsyncContext.id = 205;
 /* unused harmony export BatteryInfo */
 /* unused harmony export Reparation */
 /* unused harmony export ReparationInfo */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashbordInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DateInterval; });
+/* unused harmony export DashbordInfo */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateInterval; });
 var Vehicule = (function () {
     function Vehicule() {
     }
@@ -2070,7 +2135,7 @@ var DateInterval = (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2118,12 +2183,17 @@ var CarburantForm = (function () {
     }
     CarburantForm.prototype.ngOnInit = function () {
         var _this = this;
+        this.fuel.cost = this.precisionRound(this.fuel.cost, 2);
         this.fuelingService.getProviders("FUEL").subscribe(function (response) {
             _this.fuelProviders = response;
         });
         this.fuelingService.getListType('PAYMENT').subscribe(function (response) {
             _this.paymentTypes = response;
         });
+    };
+    CarburantForm.prototype.precisionRound = function (number, precision) {
+        var factor = Math.pow(10, precision);
+        return Math.round(number * factor) / factor;
     };
     CarburantForm.prototype.autresproviders = function (value) {
         if (this.provid == "0") {
@@ -2155,12 +2225,12 @@ var CarburantForm = (function () {
             }
         }
         else {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Carburant',
                 subTitle: 'Veuillez remplir tous les champs ',
                 buttons: ['Ok']
             });
-            alert_1.present();
+            alert.present();
         }
     };
     CarburantForm.prototype.closeModal = function () {
@@ -2175,27 +2245,32 @@ var CarburantForm = (function () {
             }
         }
         else {
-            var alert_2 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Carburant',
                 subTitle: 'Veuillez remplir tous les champs ',
                 buttons: ['Ok']
             });
-            alert_2.present();
+            alert.present();
         }
+    };
+    CarburantForm.prototype.onChange = function () {
+        if (this.fuel.costUnit > 0 && this.fuel.quantity > 0)
+            this.fuel.cost = this.fuel.costUnit * this.fuel.quantity;
     };
     return CarburantForm;
 }());
 CarburantForm = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center" *ngIf="showupdate"><a> Ajouter </a> </ion-title>\n\n          <ion-title style="text-align: center" *ngIf="!showupdate" ><a> Modifier</a> </ion-title>\n\n          <ion-buttons end>\n\n            <button ion-button icon-only style="color:white" (click)="closeModal()">\n\n            <ion-icon name="arrow-down"></ion-icon>\n\n          </button>\n\n          </ion-buttons>\n\n        </ion-navbar>\n\n        \n\n      </ion-header>\n\n      <ion-content class="ajoutcarburant" padding text-center style="background-color: rgb(255, 255, 255) ;">\n\n            <ion-list >\n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                <ion-label>Date</ion-label>\n\n                <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="operationTime" style="color:rgba(0,0,0,0.2)!important;"></ion-datetime>\n\n                    </ion-item>\n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                    <ion-label>Coût/L</ion-label>\n\n                    <ion-input min="10"  type="number" placeholder="Coût/L" [(ngModel)]="fuel.costUnit"></ion-input>\n\n                </ion-item>\n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                    <ion-label>Odométre</ion-label>\n\n                    <ion-input min="10" type="number" placeholder="Odométre" [(ngModel)]="fuel.odometre"></ion-input>\n\n                </ion-item>\n\n              \n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                        <ion-label>Quantité</ion-label>\n\n                        <ion-input type="number" placeholder="Quantité" [(ngModel)]="fuel.quantity"></ion-input>\n\n                    </ion-item>\n\n                  \n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                            <ion-label>Coût Total</ion-label>\n\n                            <ion-input type="number" placeholder="Coût Total" [(ngModel)]="fuel.cost"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;" *ngIf="showtype">\n\n                        <ion-label>Type Paiement</ion-label>\n\n                        <ion-select [(ngModel)]="type"  (ionChange)="autrestype(type)" interface="popover">\n\n                                <ion-option *ngFor="let type of paymentTypes" [value]="type">{{type.name}}</ion-option>\n\n                                <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                   </ion-item>\n\n                   <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;"  *ngIf="!showtype" >\n\n                                <ion-label>Type Paiement</ion-label>\n\n                                <ion-input type="text" placeholder="Type..." [(ngModel)]="typeName"></ion-input>\n\n                        </ion-item>\n\n\n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                            <ion-label>Num Paiement</ion-label>\n\n                            <ion-input type="number" placeholder="Num Paiement" [(ngModel)]="fuel.numberPayment"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                            <ion-label>Observations</ion-label>\n\n                            <ion-input type="text" placeholder="Observations" [(ngModel)]="fuel.observation"></ion-input>\n\n                    </ion-item>\n\n                    \n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;" *ngIf="showprovider">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="provid"  (ionChange)="autresproviders(provid)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>   \n\n                      </ion-item>\n\n                      <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;"  *ngIf="!showprovider" >\n\n                                <ion-label>Fournisseur</ion-label>\n\n                                <ion-input type="text" placeholder="Fournisseur..." [(ngModel)]="providerName"></ion-input>\n\n                        </ion-item>\n\n                      <!-- <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.providerName" (ionChange)="autres(fuel.providerName)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur.name">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                      </ion-item> -->\n\n           </ion-list>\n\n           \n\n                <button ion-button center round *ngIf="!showupdate" (click)="update()">Enregistrer\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round *ngIf="showupdate" (click)="add()">Valider\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round (click)="closeModal()">Annuler\n\n                <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n              </button>\n\n      </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center" *ngIf="showupdate"><a> Ajouter </a> </ion-title>\n\n          <ion-title style="text-align: center" *ngIf="!showupdate" ><a> Modifier</a> </ion-title>\n\n          <ion-buttons end>\n\n            <button ion-button icon-only style="color:white" (click)="closeModal()">\n\n            <ion-icon name="arrow-down"></ion-icon>\n\n          </button>\n\n          </ion-buttons>\n\n        </ion-navbar>\n\n        \n\n      </ion-header>\n\n      <ion-content class="ajoutcarburant" padding text-center style="background-color: rgb(255, 255, 255) ;">\n\n            <ion-list >\n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                <ion-label>Date</ion-label>\n\n                <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="operationTime" style="color:rgba(0,0,0,0.2)!important;"></ion-datetime>\n\n                    </ion-item>\n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                    <ion-label>Coût/L</ion-label>\n\n                    <ion-input min="10"  type="number"  (ionChange)="onChange()" placeholder="Coût/L" [(ngModel)]="fuel.costUnit"></ion-input>\n\n                </ion-item>\n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                    <ion-label>Odométre</ion-label>\n\n                    <ion-input min="10" type="number" placeholder="Odométre" [(ngModel)]="fuel.odometre"></ion-input>\n\n                </ion-item>\n\n              \n\n                <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                        <ion-label>Quantité</ion-label>\n\n                        <ion-input type="number" (ionChange)="onChange()" placeholder="Quantité" [(ngModel)]="fuel.quantity"></ion-input>\n\n                    </ion-item>\n\n                  \n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                            <ion-label>Coût Total</ion-label>\n\n                            <ion-input type="number" placeholder="Coût Total" [(ngModel)]="fuel.cost"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;" *ngIf="showtype">\n\n                        <ion-label>Type Paiement</ion-label>\n\n                        <ion-select [(ngModel)]="type"  (ionChange)="autrestype(type)" interface="popover">\n\n                                <ion-option *ngFor="let type of paymentTypes" [value]="type">{{type.name}}</ion-option>\n\n                                <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                   </ion-item>\n\n                   <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;"  *ngIf="!showtype" >\n\n                                <ion-label>Type Paiement</ion-label>\n\n                                <ion-input type="text" placeholder="Type..." [(ngModel)]="typeName"></ion-input>\n\n                        </ion-item>\n\n\n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                            <ion-label>Num Paiement</ion-label>\n\n                            <ion-input type="number" placeholder="Num Paiement" [(ngModel)]="fuel.numberPayment"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                            <ion-label>Observations</ion-label>\n\n                            <ion-input type="text" placeholder="Observations" [(ngModel)]="fuel.observation"></ion-input>\n\n                    </ion-item>\n\n                    \n\n                    <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;" *ngIf="showprovider">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="provid"  (ionChange)="autresproviders(provid)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>   \n\n                      </ion-item>\n\n                      <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;"  *ngIf="!showprovider" >\n\n                                <ion-label>Fournisseur</ion-label>\n\n                                <ion-input type="text" placeholder="Fournisseur..." [(ngModel)]="providerName"></ion-input>\n\n                        </ion-item>\n\n                      <!-- <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.providerName" (ionChange)="autres(fuel.providerName)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur.name">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                      </ion-item> -->\n\n           </ion-list>\n\n           \n\n                <button ion-button center round *ngIf="!showupdate" (click)="update()">Enregistrer\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round *ngIf="showupdate" (click)="add()">Valider\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round (click)="closeModal()">Annuler\n\n                <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n              </button>\n\n      </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_view_controller__["a" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_fueling_service__["a" /* FuelingService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_view_controller__["a" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_view_controller__["a" /* ViewController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_fueling_service__["a" /* FuelingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_fueling_service__["a" /* FuelingService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]) === "function" && _d || Object])
 ], CarburantForm);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=carburant-form.js.map
 
 /***/ }),
 
-/***/ 272:
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2203,7 +2278,7 @@ CarburantForm = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carburant_carburant__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashbord_dashbord__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashbord_dashbord__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_view_controller__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2246,18 +2321,18 @@ GestionPark = __decorate([
 
 /***/ }),
 
-/***/ 273:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Dashbord; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_global_config__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_nav_params__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_fueling_service__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_index__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_params__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_chart_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular_util_events__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2282,56 +2357,27 @@ var Dashbord = (function () {
         this.idVehicule = 0;
         this.dashbordInfo = null;
         this.matricule = null;
-        this.dns = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["a" /* dns */];
-        this.date = new __WEBPACK_IMPORTED_MODULE_3__model_index__["b" /* DateInterval */]();
-        this.endDate = new Date();
-        this.startDate = new Date();
+        this.dns = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["a" /* dns */];
+        this.date = new __WEBPACK_IMPORTED_MODULE_2__model_index__["a" /* DateInterval */]();
+        this.startDate1 = new Date();
+        this.endDate1 = new Date();
         this.load = false;
         this.costInterview = 0;
         this.costTotal = 0;
         this.groupeName = null;
         this.idVehicule = navParams.data.idDevice.idVehicule;
         this.matricule = navParams.data.matricule;
+        this.endDate1.setTime(this.endDate1.getTime());
+        this.startDate1 = new Date(this.endDate1.getFullYear(), 0, 1);
+        this.startDate = (this.startDate1).toISOString();
+        this.endDate = (this.endDate1).toISOString();
     }
     Dashbord.prototype.ngOnInit = function () {
-        var _this = this;
-        this.subscriptionVehicule = __WEBPACK_IMPORTED_MODULE_0_rxjs__["Observable"].interval(10).subscribe(function (x) {
-            _this.options = null;
-            //this.startDate = new Date(this.endDate.getFullYear(),0,1);
-            _this.dashbordInfo = new __WEBPACK_IMPORTED_MODULE_3__model_index__["a" /* DashbordInfo */]();
-        });
-        //   this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
-        //     type: 'doughnut',
-        //     data: {
-        //         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        //         datasets: [{
-        //             label: '# of Votes',
-        //             data: [12, 19, 3, 5, 2, 3],
-        //             backgroundColor: [
-        //                 'rgba(255, 99, 132, 0.2)',
-        //                 'rgba(54, 162, 235, 0.2)',
-        //                 'rgba(255, 206, 86, 0.2)',
-        //                 'rgba(75, 192, 192, 0.2)',
-        //                 'rgba(153, 102, 255, 0.2)',
-        //                 'rgba(255, 159, 64, 0.2)'
-        //             ],
-        //             hoverBackgroundColor: [
-        //                 "#FF6384",
-        //                 "#36A2EB",
-        //                 "#FFCE56",
-        //                 "#FF6384",
-        //                 "#36A2EB",
-        //                 "#FFCE56"
-        //             ]
-        //         }]
-        //     }
-        // });
     };
     Dashbord.prototype.getInfoVehiculeDashbord = function () {
         var _this = this;
-        this.load = true;
-        this.date.startDate = 1515755700000;
-        this.date.endDate = 1514764800000;
+        this.date.startDate = this.startDate;
+        this.date.endDate = this.endDate;
         this.fuelingService.getDashbordInfo(this.idVehicule, this.date).subscribe(function (response) {
             _this.dashbordInfo = response;
             _this.load = false;
@@ -2347,68 +2393,51 @@ var Dashbord = (function () {
         this.events.publish('Dismiss', null);
     };
     Dashbord.prototype.configHighcharts = function () {
-        this.options = {
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 45,
-                    beta: 0
-                }
-            },
-            title: {
-                text: 'Coûts de gestion du véhicule : <span style="color: #0EBA28;font-weight: bold">' + this.matricule + '</span> du groupe : <span style="color: #0EBA28;font-weight: bold">' + this.groupeName + '</span>'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    depth: 35,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.name}'
-                    }
-                }
-            },
-            series: [{
-                    type: 'pie',
-                    name: 'percentage',
-                    data: [
-                        ['Document circulation :' + this.dashbordInfo.runningDocument + ' DH', (this.dashbordInfo.runningDocument * 100) / this.costTotal],
-                        ['Carburant : ' + this.dashbordInfo.fuel + ' DH', (this.dashbordInfo.fuel * 100) / this.costTotal],
-                        {
-                            name: 'Vidange : ' + this.dashbordInfo.oilChange + ' DH',
-                            y: (this.dashbordInfo.oilChange * 100) / this.costTotal,
-                            sliced: true,
-                            selected: true
-                        },
-                        ['Pneu : ' + this.dashbordInfo.tireMaintenance + ' DH', (this.dashbordInfo.tireMaintenance * 100) / this.costTotal],
-                        ['Batterie : ' + this.dashbordInfo.batteryMaintenance + ' DH', (this.dashbordInfo.batteryMaintenance * 100) / this.costTotal],
-                        ['Reparation : ' + this.dashbordInfo.reparation + ' DH', (this.dashbordInfo.reparation * 100) / this.costTotal]
-                    ]
-                }]
-        };
+        this.doughnutChart = new __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"](this.doughnutCanvas.nativeElement, {
+            type: 'doughnut',
+            data: {
+                labels: ["Batterie", "Carburant", "Vidange", "Réparation", "Document Circulation", "Pneu"],
+                datasets: [{
+                        label: '# of Votes',
+                        data: [this.dashbordInfo.batteryMaintenance, this.dashbordInfo.fuel, this.dashbordInfo.oilChange, this.dashbordInfo.reparation, this.dashbordInfo.runningDocument, this.dashbordInfo.tireMaintenance],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            '#f9bbcf',
+                            '#95ceff',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        hoverBackgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56",
+                            "#FF6384",
+                            "#95ceff",
+                            "#FFCE56"
+                        ]
+                    }]
+            }
+        });
     };
     return Dashbord;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["ViewChild"])('doughnutCanvas'),
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('doughnutCanvas'),
     __metadata("design:type", Object)
 ], Dashbord.prototype, "doughnutCanvas", void 0);
 Dashbord = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\dashbord\dashbord.html"*/'<ion-header>\n\n        <ion-navbar style="height:48px" hideBackButton="true">\n\n          <ion-title>\n\n            <span style="color:white">TDB</span>\n\n          </ion-title>\n\n          <ion-buttons left>\n\n            <button ion-button icon-only (click)="closeModal()">\n\n              <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-navbar>\n\n       \n\n      </ion-header>\n\n      <ion-content>\n\n            <ion-item style="margin-top: 70px;background-color:white">\n\n                    <ion-label style="color:white">Date début</ion-label>\n\n                    <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate" style="color:white"></ion-datetime>\n\n                  </ion-item>\n\n                \n\n                  <ion-item style="margin-bottom: 20px;background-color:white">\n\n                    <ion-label style="color:white">Date fin</ion-label>\n\n                    <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate" style="color:white"> </ion-datetime>\n\n                  </ion-item>\n\n                  <button (click)="getInfoVehiculeDashbord()" [disabled]="load" style="color: green;" type="button" class="btn btn-block btn-default">Valider</button> \n\n                  <ion-card>\n\n                        <ion-card-header>\n\n                        </ion-card-header>\n\n                        <ion-card-content>\n\n                          <canvas #doughnutCanvas></canvas>\n\n                        </ion-card-content>\n\n                    </ion-card>\n\n                    \n\n      </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\dashbord\dashbord.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\dashbord\dashbord.html"*/'<ion-header>\n\n  <ion-navbar style="height:48px" hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">TDB</span>\n\n    </ion-title>\n\n    <ion-buttons left>\n\n      <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon ios="ios-return-left" md="md-return-left" style="color:white"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <ion-item style="margin-top: 30px;background-color:rgba(0,0,0,0.2)">\n\n    <ion-label style="color:rgb(0, 0, 0);">Date début</ion-label>\n\n    <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate" style="color:white"></ion-datetime>\n\n  </ion-item>\n\n\n\n  <ion-item style="margin-bottom: 20px;background-color:rgba(0,0,0,0.2)">\n\n    <ion-label style="color:rgb(0, 0, 0)">Date fin</ion-label>\n\n    <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate" style="color:white"> </ion-datetime>\n\n  </ion-item>\n\n  <button ion-button full outline (click)="getInfoVehiculeDashbord()" [disabled]="load" type="button">Valider</button>\n\n\n\n  <ion-card style="height: 65%;" >\n\n\n\n    <ion-card-content>\n\n      <canvas #doughnutCanvas></canvas>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\dashbord\dashbord.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_nav_params__["a" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_fueling_service__["a" /* FuelingService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular_util_events__["a" /* Events */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_params__["a" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_params__["a" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__["a" /* FuelingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__["a" /* FuelingService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular_util_events__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular_util_events__["a" /* Events */]) === "function" && _c || Object])
 ], Dashbord);
 
+var _a, _b, _c;
 //# sourceMappingURL=dashbord.js.map
 
 /***/ }),
 
-/***/ 274:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2494,7 +2523,7 @@ GroupService = __decorate([
 
 /***/ }),
 
-/***/ 275:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2785,7 +2814,7 @@ VehiculeForm = __decorate([
 
 /***/ }),
 
-/***/ 276:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2905,7 +2934,7 @@ GestPoi = __decorate([
 
 /***/ }),
 
-/***/ 281:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2993,7 +3022,7 @@ StopList = __decorate([
 
 /***/ }),
 
-/***/ 282:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3056,7 +3085,7 @@ HistoricalForm = __decorate([
 
 /***/ }),
 
-/***/ 283:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3103,7 +3132,7 @@ PathsList = __decorate([
 
 /***/ }),
 
-/***/ 284:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3121,7 +3150,7 @@ function createAuthorizationHeader(headers) {
 
 /***/ }),
 
-/***/ 285:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3131,7 +3160,7 @@ function createAuthorizationHeader(headers) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_headers__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_headers__ = __webpack_require__(283);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3169,7 +3198,7 @@ SigningService = __decorate([
 
 /***/ }),
 
-/***/ 286:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3184,7 +3213,7 @@ SigningService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_BehaviorSubject__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_BehaviorSubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__group_realtime_group_realtime__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__group_realtime_group_realtime__ = __webpack_require__(286);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3258,7 +3287,7 @@ __decorate([
 ], GroupsPage.prototype, "content", void 0);
 GroupsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-        selector: 'page-groups-page',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\groups-page.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      <a style="font-size: 4vw;">Groupes et véhicules</a>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down" style="color:white"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="Content" style="background-color: rgba(255, 255, 255, 1) !important; padding: auto;">\n\n  <!--<ion-card *ngFor="let group of groups">\n\n        <ion-list  style="background-color:rgba(255.255.255.0.8)" >\n\n            <ion-row >\n\n                <ion-col col-12 col-md-12 col-sm-12 col-xs-12>{{group.nom}}</ion-col>   \n\n            </ion-row>\n\n        </ion-list>\n\n    </ion-card-->\n\n  <ion-list>\n\n    <button ion-item *ngFor="let group of groups" style="margin: 10px 5px 10px 5px; opacity:0.8" (click)="selectedGroup(group)">\n\n      {{group.nom}}\n\n    </button>\n\n  </ion-list>\n\n  <!-- <div style="font-size: 15px;border-radius:0px; margin-top: 0%;">\n\n    <div style="width: 500%">\n\n      <table class="table" style="width: 20%">\n\n        <tbody>\n\n          <ng-template ngFor let-item [ngForOf]="groups">\n\n            <tr style="color: black">\n\n              <td style="font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">{{item.nom}}</td>\n\n            </tr>\n\n            <tr>\n\n              <td>\n\n                <div style="overflow:auto">\n\n                  <table class="table" frame="hsides" rules="cols" style="width: 100%;">\n\n                    <thead frame="hsides" border="1">\n\n                    \n\n                    </thead>\n\n                    <tbody style="border :colspan; text-align: center;" frame="hsides" frame="hsides" rules="all">\n\n                      <ng-container *ngFor="let vehicule of item.vehicules">\n\n                        <tr [ngClass]="{\'activeRT\': selectedDevice == vehicule.idDevice}" style="border-bottom:1pt solid black;">\n\n                          <td width="10%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                          \n\n                            <img width="30 px" *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)" src="{{vehicule?.realTimeRecord?.icon}}">\n\n                            <ion-label *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)" style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                          </td>\n\n                          <td width="30%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n\n\n                            <div>\n\n                              <b>\n\n                                {{vehicule.matricule}}\n\n                                <br> {{vehicule?.driver?.firstName}} {{vehicule?.driver?.lastName}}\n\n                              </b>\n\n                            </div>\n\n                          </td>\n\n                          <td width="40%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                            <div *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                              <b>\n\n                                <div *ngIf="vehicule.realTimeRecord.relativePosition">\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord?.relativePosition}}\n\n                                  </b>\n\n                                </div>\n\n                                <div *ngIf="!vehicule.realTimeRecord.relativePosition">\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord.geocoding}}\n\n                                  </b>\n\n                                </div>\n\n                                <div>\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord?.recordTime| date:\'d-M HH:mm\'}}\n\n                                  </b>\n\n                                </div>\n\n                                <div>\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord?.speed}} KM/H\n\n                                  </b>\n\n                                </div>\n\n                              </b>\n\n                            </div>\n\n\n\n                         \n\n                            <div *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                              <ion-label style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                            </div>\n\n                          </td>\n\n                        </tr>\n\n                      </ng-container>\n\n                    </tbody>\n\n                  </table>\n\n\n\n                </div>\n\n              </td>\n\n            </tr>\n\n          </ng-template>\n\n        </tbody>\n\n      </table>\n\n    </div>\n\n  </div> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\groups-page.html"*/,
+        selector: 'page-groups-page',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\groups-page.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      <a style="font-size: 4vw;">Groupes et véhicules</a>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down" style="color:white"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="Content" style="background-color: rgba(255, 255, 255, 0.82) !important; padding: auto;">\n\n  <!--<ion-card *ngFor="let group of groups">\n\n        <ion-list  style="background-color:rgba(255.255.255.0.8)" >\n\n            <ion-row >\n\n                <ion-col col-12 col-md-12 col-sm-12 col-xs-12>{{group.nom}}</ion-col>   \n\n            </ion-row>\n\n        </ion-list>\n\n    </ion-card-->\n\n  <ion-list>\n\n    <button ion-item *ngFor="let group of groups" style="margin: 10px 5px 10px 5px; opacity:0.8" (click)="selectedGroup(group)">\n\n      {{group.nom}}\n\n    </button>\n\n  </ion-list>\n\n  <!-- <div style="font-size: 15px;border-radius:0px; margin-top: 0%;">\n\n    <div style="width: 500%">\n\n      <table class="table" style="width: 20%">\n\n        <tbody>\n\n          <ng-template ngFor let-item [ngForOf]="groups">\n\n            <tr style="color: black">\n\n              <td style="font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">{{item.nom}}</td>\n\n            </tr>\n\n            <tr>\n\n              <td>\n\n                <div style="overflow:auto">\n\n                  <table class="table" frame="hsides" rules="cols" style="width: 100%;">\n\n                    <thead frame="hsides" border="1">\n\n                    \n\n                    </thead>\n\n                    <tbody style="border :colspan; text-align: center;" frame="hsides" frame="hsides" rules="all">\n\n                      <ng-container *ngFor="let vehicule of item.vehicules">\n\n                        <tr [ngClass]="{\'activeRT\': selectedDevice == vehicule.idDevice}" style="border-bottom:1pt solid black;">\n\n                          <td width="10%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                          \n\n                            <img width="30 px" *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)" src="{{vehicule?.realTimeRecord?.icon}}">\n\n                            <ion-label *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)" style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                          </td>\n\n                          <td width="30%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n\n\n                            <div>\n\n                              <b>\n\n                                {{vehicule.matricule}}\n\n                                <br> {{vehicule?.driver?.firstName}} {{vehicule?.driver?.lastName}}\n\n                              </b>\n\n                            </div>\n\n                          </td>\n\n                          <td width="40%" (click)="goToRealTimeRecord(vehicule,isValidPoint(vehicule.realTimeRecord.coordinate))">\n\n                            <div *ngIf="isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                              <b>\n\n                                <div *ngIf="vehicule.realTimeRecord.relativePosition">\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord?.relativePosition}}\n\n                                  </b>\n\n                                </div>\n\n                                <div *ngIf="!vehicule.realTimeRecord.relativePosition">\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord.geocoding}}\n\n                                  </b>\n\n                                </div>\n\n                                <div>\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord?.recordTime| date:\'d-M HH:mm\'}}\n\n                                  </b>\n\n                                </div>\n\n                                <div>\n\n                                  <b>\n\n                                    {{vehicule?.realTimeRecord?.speed}} KM/H\n\n                                  </b>\n\n                                </div>\n\n                              </b>\n\n                            </div>\n\n\n\n                         \n\n                            <div *ngIf="!isValidPoint(vehicule.realTimeRecord.coordinate)">\n\n                              <ion-label style="background-color:#f39c12;color:white;"> Aucune Info</ion-label>\n\n                            </div>\n\n                          </td>\n\n                        </tr>\n\n                      </ng-container>\n\n                    </tbody>\n\n                  </table>\n\n\n\n                </div>\n\n              </td>\n\n            </tr>\n\n          </ng-template>\n\n        </tbody>\n\n      </table>\n\n    </div>\n\n  </div> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\groups-page\groups-page.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ModalController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_5__angular_common__["DecimalPipe"], __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__["a" /* RealTimeService */]])
 ], GroupsPage);
@@ -3267,7 +3296,7 @@ GroupsPage = __decorate([
 
 /***/ }),
 
-/***/ 287:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3329,7 +3358,6 @@ var GroupeRealtime = (function () {
     }
     GroupeRealtime.prototype.ngOnInit = function () {
         this.group = this.navParams.get('group');
-        console.log(this.group);
     };
     GroupeRealtime.prototype.closeModal = function () {
         this.viewCtrl.dismiss(null);
@@ -3340,7 +3368,6 @@ var GroupeRealtime = (function () {
             if (x.last) {
                 _this.status = false;
             }
-            console.log(x);
             _this.vehicules = x.content;
             _this.vehicules.forEach(function (vehicule) {
                 vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_7__objects_real_time__["b" /* RealTimeRecord */]();
@@ -3350,8 +3377,7 @@ var GroupeRealtime = (function () {
                     vehicule.realTimeRecord.vehicule = vehicule;
                     _this.trackRealTimeRecord(vehicule.realTimeRecord);
                     _this.totalpage = x.totalPages;
-                }, function (err) {
-                });
+                }, function (err) { });
             });
         });
         //this.content.addScrollPadding(1); //.subscribe(($event: any) => {});
@@ -3561,8 +3587,7 @@ var GroupeRealtime = (function () {
             realTimeRecord.geocoding = _this.getGeocoding(adress.address);
             realTimeRecord.geocodingDetails = adress.display_name;
             _this.updateSpecificGroups(realTimeRecord);
-        }, function (err) {
-        });
+        }, function (err) { });
     };
     GroupeRealtime.prototype.getOldRealTimeRecord = function (id) {
         var result = this.oldRealTimeRecords.filter(function (rt) {
@@ -3631,7 +3656,7 @@ GroupeRealtime = __decorate([
 
 /***/ }),
 
-/***/ 288:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3693,12 +3718,12 @@ MileageComponent = __decorate([
 
 /***/ }),
 
-/***/ 290:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Vehicules; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vehicule_form_vehicule_form__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vehicule_form_vehicule_form__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_vehicule_service__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
@@ -3871,7 +3896,7 @@ Vehicules = __decorate([
 
 /***/ }),
 
-/***/ 291:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3879,7 +3904,7 @@ Vehicules = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_group_service__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_group_service__ = __webpack_require__(273);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3940,14 +3965,14 @@ Groupes = __decorate([
 
 /***/ }),
 
-/***/ 292:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_service__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_driver_service__ = __webpack_require__(292);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4005,7 +4030,7 @@ DriverComponent = __decorate([
 
 /***/ }),
 
-/***/ 293:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4082,13 +4107,13 @@ DriverService = __decorate([
 
 /***/ }),
 
-/***/ 294:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(298);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -4096,51 +4121,51 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 299:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_gestion_park_carburant_carburant__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_gestion_park_gest_park__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_group_service__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_datamana_vehicules_vehicule_form_vehicule_form__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestpoi_gestpoi__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_call_number__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_gestion_park_gest_park__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_group_service__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_datamana_vehicules_vehicule_form_vehicule_form__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_gestpoi_gestpoi__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_call_number__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_poi_poi__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_common__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__(613);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_login__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_login__ = __webpack_require__(284);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_historical_historical__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_groups_page_groups_page__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_historical_form_historical_form__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_paths_list_paths_list__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_groups_page_groups_page__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_historical_form_historical_form__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_paths_list_paths_list__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__utils_geocoding_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__utils_map_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_real_time_service__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_historical_service__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_data_management_service__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_storage__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_stop_list_stop_list__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_mileage_mileage__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_datamana_vehicules_vehicules__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_datamana_groupes_groupes__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_stop_list_stop_list__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_mileage_mileage__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_datamana_vehicules_vehicules__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_datamana_groupes_groupes__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_vehicule_service__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_driver_service__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_launch_navigator__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_groups_page_group_realtime_group_realtime__ = __webpack_require__(287);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_gestion_park_dashbord_dashbord__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_driver_service__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_launch_navigator__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_groups_page_group_realtime_group_realtime__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_gestion_park_dashbord_dashbord__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_fueling_service__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_gestion_park_carburant_carburant_form_carburant_form__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_gestion_park_carburant_carburant_form_carburant_form__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__angular_platform_browser_animations__ = __webpack_require__(617);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4639,38 +4664,39 @@ var MapService = (function () {
                 maxZoom: 20,
                 maxNativeZoom: 17,
                 subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }) /*
-            googlehybride: L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            googleSat: L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            'Google Terrain': L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            
-            OpenStreetMap: L.tileLayer("http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
-                maxZoom: 20,
-                maxNativeZoom: 17,
-                attribution: '&copy; <a href="rimtelecom.ma">Rim telecom</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
-            }),
-            Esri: L.tileLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}", {
-                attribution: 'Rimtelecom'
-            }),
-            CartoDB: L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
-                maxZoom: 20,
-                maxNativeZoom: 17,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-            }),
-            Esri_WorldImagery: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                maxZoom: 20,
-                maxNativeZoom: 17,
-                attribution: 'Rimtelecom'
-            })*/
+            })
+            /*
+                        googlehybride: L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+                            maxZoom: 20,
+                            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+                        }),
+                        googleSat: L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                            maxZoom: 20,
+                            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+                        }),
+                        'Google Terrain': L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+                            maxZoom: 20,
+                            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+                        }),
+                        
+                        OpenStreetMap: L.tileLayer("http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+                            maxZoom: 20,
+                            maxNativeZoom: 17,
+                            attribution: '&copy; <a href="rimtelecom.ma">Rim telecom</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+                        }),
+                        Esri: L.tileLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}", {
+                            attribution: 'Rimtelecom'
+                        }),
+                        CartoDB: L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
+                            maxZoom: 20,
+                            maxNativeZoom: 17,
+                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+                        }),
+                        Esri_WorldImagery: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                            maxZoom: 20,
+                            maxNativeZoom: 17,
+                            attribution: 'Rimtelecom'
+                        })*/
         };
     }
     MapService.prototype.addRtMarker = function (rtMarker) {
@@ -4687,10 +4713,19 @@ var MapService = (function () {
             marker.addTo(this.map);
             marker.bindPopup(popup);
             marker.setIcon(icon);
-            marker.on('click', function () { _this.events.publish('Showinfo', true); });
-            this.map.on('click', function () { _this.events.publish('Showinfo', false); });
-            marker.on('click', function () { _this.map.setView(coordinate, 12); });
-            this.newRtMarkers.push({ id: id, marker: marker });
+            marker.on('click', function () {
+                _this.events.publish('Showinfo', true);
+            });
+            this.map.on('click', function () {
+                _this.events.publish('Showinfo', false);
+            });
+            marker.on('click', function () {
+                _this.map.setView(coordinate, 12);
+            });
+            this.newRtMarkers.push({
+                id: id,
+                marker: marker
+            });
         }
         else {
             this.newRtMarkers.map(function (rt) {
@@ -4710,7 +4745,10 @@ var MapService = (function () {
                         var points = [];
                         points.push(rt.marker.getLatLng());
                         points.push(coordinate.value.getLatLng());
-                        var polyline = L.polyline(points, { color: '#0031D9', weight: 3 });
+                        var polyline = L.polyline(points, {
+                            color: '#0031D9',
+                            weight: 3
+                        });
                         _this.addPolyline(polyline);
                     }
                 }
@@ -4735,7 +4773,10 @@ var MapService = (function () {
                     var points = [];
                     points.push(rt.value.getLatLng());
                     points.push(rtMarker.value.getLatLng());
-                    var polyline = L.polyline(points, { color: '#0031D9', weight: 3 });
+                    var polyline = L.polyline(points, {
+                        color: '#0031D9',
+                        weight: 3
+                    });
                     _this.addPolyline(polyline);
                 }
                 rt.value.setLatLng(rtMarker.value.getLatLng());
@@ -4865,9 +4906,10 @@ var MapService = (function () {
 }());
 MapService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]) === "function" && _a || Object])
 ], MapService);
 
+var _a;
 //# sourceMappingURL=map.service.js.map
 
 /***/ }),
@@ -4881,13 +4923,13 @@ MapService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_datamana_groupes_groupes__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_datamana_groupes_groupes__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(291);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5038,14 +5080,15 @@ var MyApp = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('mycontent'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavController */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavController */]) === "function" && _a || Object)
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/'<ion-menu [content]="mycontent">\n\n  <!--style="margin-top:20px"-->\n\n  <ion-header style="height:48px;margin-top:20px;">\n\n    <ion-title>\n\n      <span style="color:white">Menu</span>\n\n    </ion-title>\n\n  </ion-header>\n\n  <ion-content style="background-color:white;margin-top:10px;">\n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/img/logorim.jpg">\n\n      </ion-avatar>\n\n      <h2>Rim Télécom</h2>\n\n      <p>Online</p>\n\n    </ion-item>\n\n    <button ion-button color="light" (click)="GotoTempsRealandHistorique()" style="width:90%">Temps réel & Historique</button>\n\n    <button ion-button color="light" (click)="hidelist()" style="width:90%">Gestion de données</button>\n\n    <ion-list [hidden]="listhide">\n\n      <ion-card>\n\n        <ion-list>\n\n          <button ion-item (click)="GoToGestVehi()">\n\n            <i class="fa fa-car" aria-hidden="true"></i>\n\n            Véhicules\n\n          </button>\n\n          <button ion-item (click)="GoToGestGroup()">\n\n            <i class="fa fa-users" aria-hidden="true"></i>\n\n            Groupes\n\n          </button>\n\n          <button ion-item (click)="GotoGestchauf()">\n\n            <i class="fa fa-user" aria-hidden="true"></i>\n\n            Conducteurs\n\n          </button>\n\n          <button ion-item (click)="GotoGestpoi()">\n\n            <i class="fa fa-flag" aria-hidden="true"></i>\n\n            Points d\'intérêt\n\n          </button>\n\n        </ion-list>\n\n      </ion-card>\n\n    </ion-list>\n\n  </ion-content>\n\n  <ion-footer>\n\n    <button ion-button outline full color="danger" (click)="logoutconfirm()">Déconnexion</button>\n\n  </ion-footer>\n\n</ion-menu>\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */]) === "function" && _k || Object])
 ], MyApp);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -5061,7 +5104,7 @@ MyApp = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(283);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5153,6 +5196,259 @@ RealTimeService = __decorate([
 ], RealTimeService);
 
 //# sourceMappingURL=real-time.service.js.map
+
+/***/ }),
+
+/***/ 777:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 632,
+	"./af.js": 632,
+	"./ar": 633,
+	"./ar-dz": 634,
+	"./ar-dz.js": 634,
+	"./ar-kw": 635,
+	"./ar-kw.js": 635,
+	"./ar-ly": 636,
+	"./ar-ly.js": 636,
+	"./ar-ma": 637,
+	"./ar-ma.js": 637,
+	"./ar-sa": 638,
+	"./ar-sa.js": 638,
+	"./ar-tn": 639,
+	"./ar-tn.js": 639,
+	"./ar.js": 633,
+	"./az": 640,
+	"./az.js": 640,
+	"./be": 641,
+	"./be.js": 641,
+	"./bg": 642,
+	"./bg.js": 642,
+	"./bn": 643,
+	"./bn.js": 643,
+	"./bo": 644,
+	"./bo.js": 644,
+	"./br": 645,
+	"./br.js": 645,
+	"./bs": 646,
+	"./bs.js": 646,
+	"./ca": 647,
+	"./ca.js": 647,
+	"./cs": 648,
+	"./cs.js": 648,
+	"./cv": 649,
+	"./cv.js": 649,
+	"./cy": 650,
+	"./cy.js": 650,
+	"./da": 651,
+	"./da.js": 651,
+	"./de": 652,
+	"./de-at": 653,
+	"./de-at.js": 653,
+	"./de-ch": 654,
+	"./de-ch.js": 654,
+	"./de.js": 652,
+	"./dv": 655,
+	"./dv.js": 655,
+	"./el": 656,
+	"./el.js": 656,
+	"./en-au": 657,
+	"./en-au.js": 657,
+	"./en-ca": 658,
+	"./en-ca.js": 658,
+	"./en-gb": 659,
+	"./en-gb.js": 659,
+	"./en-ie": 660,
+	"./en-ie.js": 660,
+	"./en-nz": 661,
+	"./en-nz.js": 661,
+	"./eo": 662,
+	"./eo.js": 662,
+	"./es": 663,
+	"./es-do": 664,
+	"./es-do.js": 664,
+	"./es.js": 663,
+	"./et": 665,
+	"./et.js": 665,
+	"./eu": 666,
+	"./eu.js": 666,
+	"./fa": 667,
+	"./fa.js": 667,
+	"./fi": 668,
+	"./fi.js": 668,
+	"./fo": 669,
+	"./fo.js": 669,
+	"./fr": 670,
+	"./fr-ca": 671,
+	"./fr-ca.js": 671,
+	"./fr-ch": 672,
+	"./fr-ch.js": 672,
+	"./fr.js": 670,
+	"./fy": 673,
+	"./fy.js": 673,
+	"./gd": 674,
+	"./gd.js": 674,
+	"./gl": 675,
+	"./gl.js": 675,
+	"./gom-latn": 676,
+	"./gom-latn.js": 676,
+	"./he": 677,
+	"./he.js": 677,
+	"./hi": 678,
+	"./hi.js": 678,
+	"./hr": 679,
+	"./hr.js": 679,
+	"./hu": 680,
+	"./hu.js": 680,
+	"./hy-am": 681,
+	"./hy-am.js": 681,
+	"./id": 682,
+	"./id.js": 682,
+	"./is": 683,
+	"./is.js": 683,
+	"./it": 684,
+	"./it.js": 684,
+	"./ja": 685,
+	"./ja.js": 685,
+	"./jv": 686,
+	"./jv.js": 686,
+	"./ka": 687,
+	"./ka.js": 687,
+	"./kk": 688,
+	"./kk.js": 688,
+	"./km": 689,
+	"./km.js": 689,
+	"./kn": 690,
+	"./kn.js": 690,
+	"./ko": 691,
+	"./ko.js": 691,
+	"./ky": 692,
+	"./ky.js": 692,
+	"./lb": 693,
+	"./lb.js": 693,
+	"./lo": 694,
+	"./lo.js": 694,
+	"./lt": 695,
+	"./lt.js": 695,
+	"./lv": 696,
+	"./lv.js": 696,
+	"./me": 697,
+	"./me.js": 697,
+	"./mi": 698,
+	"./mi.js": 698,
+	"./mk": 699,
+	"./mk.js": 699,
+	"./ml": 700,
+	"./ml.js": 700,
+	"./mr": 701,
+	"./mr.js": 701,
+	"./ms": 702,
+	"./ms-my": 703,
+	"./ms-my.js": 703,
+	"./ms.js": 702,
+	"./my": 704,
+	"./my.js": 704,
+	"./nb": 705,
+	"./nb.js": 705,
+	"./ne": 706,
+	"./ne.js": 706,
+	"./nl": 707,
+	"./nl-be": 708,
+	"./nl-be.js": 708,
+	"./nl.js": 707,
+	"./nn": 709,
+	"./nn.js": 709,
+	"./pa-in": 710,
+	"./pa-in.js": 710,
+	"./pl": 711,
+	"./pl.js": 711,
+	"./pt": 712,
+	"./pt-br": 713,
+	"./pt-br.js": 713,
+	"./pt.js": 712,
+	"./ro": 714,
+	"./ro.js": 714,
+	"./ru": 715,
+	"./ru.js": 715,
+	"./sd": 716,
+	"./sd.js": 716,
+	"./se": 717,
+	"./se.js": 717,
+	"./si": 718,
+	"./si.js": 718,
+	"./sk": 719,
+	"./sk.js": 719,
+	"./sl": 720,
+	"./sl.js": 720,
+	"./sq": 721,
+	"./sq.js": 721,
+	"./sr": 722,
+	"./sr-cyrl": 723,
+	"./sr-cyrl.js": 723,
+	"./sr.js": 722,
+	"./ss": 724,
+	"./ss.js": 724,
+	"./sv": 725,
+	"./sv.js": 725,
+	"./sw": 726,
+	"./sw.js": 726,
+	"./ta": 727,
+	"./ta.js": 727,
+	"./te": 728,
+	"./te.js": 728,
+	"./tet": 729,
+	"./tet.js": 729,
+	"./th": 730,
+	"./th.js": 730,
+	"./tl-ph": 731,
+	"./tl-ph.js": 731,
+	"./tlh": 732,
+	"./tlh.js": 732,
+	"./tr": 733,
+	"./tr.js": 733,
+	"./tzl": 734,
+	"./tzl.js": 734,
+	"./tzm": 735,
+	"./tzm-latn": 736,
+	"./tzm-latn.js": 736,
+	"./tzm.js": 735,
+	"./uk": 737,
+	"./uk.js": 737,
+	"./ur": 738,
+	"./ur.js": 738,
+	"./uz": 739,
+	"./uz-latn": 740,
+	"./uz-latn.js": 740,
+	"./uz.js": 739,
+	"./vi": 741,
+	"./vi.js": 741,
+	"./x-pseudo": 742,
+	"./x-pseudo.js": 742,
+	"./yo": 743,
+	"./yo.js": 743,
+	"./zh-cn": 744,
+	"./zh-cn.js": 744,
+	"./zh-hk": 745,
+	"./zh-hk.js": 745,
+	"./zh-tw": 746,
+	"./zh-tw.js": 746
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 777;
 
 /***/ }),
 
@@ -5527,5 +5823,5 @@ HistoricalService = __decorate([
 
 /***/ })
 
-},[294]);
+},[293]);
 //# sourceMappingURL=main.js.map
