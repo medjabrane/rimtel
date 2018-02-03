@@ -5,9 +5,9 @@ webpackJsonp([0],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Poi; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(13);
@@ -517,16 +517,16 @@ var Driver = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_map_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_map_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__ = __webpack_require__(417);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_global_config__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_home__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__groups_page_groups_page__ = __webpack_require__(421);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__objects_real_time__ = __webpack_require__(103);
@@ -1889,8 +1889,8 @@ Historical = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_login__ = __webpack_require__(420);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_real_time_service__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_historical_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_real_time_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_historical_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1967,9 +1967,12 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/' <ion-header>\n\n  <ion-navbar >\n\n    <ion-title > <a>Bienvenue</a></ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="page-login">\n\n \n\n  <ion-card class="login-card">\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n       <ion-item>\n\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant" ></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n         \n\n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe" ></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n\n      Connexion\n\n      </button>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n       <ion-title> <img src="assets/img/logorim.jpg" height="60" /></ion-title>\n\n    </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/' <ion-header>\n\n  <ion-navbar >\n\n    <ion-title > <a style="color:white">Bienvenue</a></ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="page-login">\n\n \n\n  <ion-card class="login-card">\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n       <ion-item>\n\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant" ></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n         \n\n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe" ></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n\n      Connexion\n\n      </button>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n       <ion-title> <img src="assets/img/logorim.jpg" height="60" /></ion-title>\n\n    </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular_navigation_nav_params__["a" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_7__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_login__["a" /* SigningService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular_navigation_nav_params__["a" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__providers_historical_service__["a" /* HistoricalService */],
+        __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__providers_real_time_service__["a" /* RealTimeService */],
+        __WEBPACK_IMPORTED_MODULE_7__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_login__["a" /* SigningService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
@@ -2001,7 +2004,7 @@ webpackEmptyAsyncContext.id = 176;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_navigation_nav_params__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_document_circulation_service__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_file_upload__ = __webpack_require__(112);
@@ -2292,7 +2295,7 @@ DocumentCirculationComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular_navigation_nav_params__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_document_circulation_service__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_index__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_index__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_navigation_view_controller__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__doc_circ_form_doc_circ_form__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular_components_alert_alert_controller__ = __webpack_require__(53);
@@ -2925,7 +2928,7 @@ VidangeForm = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_oil_change_service__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__);
@@ -3182,7 +3185,7 @@ VidangeComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_index__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_Rx__);
@@ -3562,7 +3565,7 @@ var CarburantForm = (function () {
     return CarburantForm;
 }());
 CarburantForm = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center" *ngIf="showupdate"><a> Ajouter </a> </ion-title>\n\n          <ion-title style="text-align: center" *ngIf="!showupdate" ><a> Modifier</a> </ion-title>\n\n         \n\n    <ion-buttons left>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n          <ion-icon style="color:white" name="arrow-round-back"></ion-icon> \n\n        </button>\n\n      </ion-buttons>\n\n        </ion-navbar>\n\n        \n\n      </ion-header>\n\n      <ion-content class="ajoutcarburant" padding text-center style="background-color: rgb(255, 255, 255) ;">\n\n            <ion-list >\n\n                <ion-item >\n\n                <ion-label>Date</ion-label>\n\n                <ion-datetime name="startDate" displayFormat="DD-MM-YYYY, HH:mm" [(ngModel)]="operationTime" style="color:rgba(0,0,0)!important;"></ion-datetime>\n\n                    </ion-item>\n\n                <ion-item >\n\n                    <ion-label>Coût/L</ion-label>\n\n                    <ion-input min="10"  type="number"  (ionChange)="onChange()"  [(ngModel)]="fuel.costUnit"></ion-input>\n\n                </ion-item>\n\n                <ion-item >\n\n                    <ion-label>Odométre</ion-label>\n\n                    <ion-input min="10" type="number"  [(ngModel)]="fuel.odometre"></ion-input>\n\n                </ion-item>\n\n              \n\n                <ion-item>\n\n                        <ion-label>Quantité</ion-label>\n\n                        <ion-input type="number" (ionChange)="onChange()"  [(ngModel)]="fuel.quantity"></ion-input>\n\n                    </ion-item>\n\n                  \n\n                    <ion-item >\n\n                            <ion-label>Coût Total</ion-label>\n\n                            <ion-input type="number" placeholder="Coût Total" [(ngModel)]="fuel.cost"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item *ngIf="showtype">\n\n                        <ion-label>Type Paiement</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.type.id"  (ionChange)="autrestype(fuel.type.id)" interface="popover">\n\n                                <ion-option *ngFor="let type of paymentTypes" [value]="type.id">{{type.name}}</ion-option>\n\n                                <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                   </ion-item>\n\n                   <ion-item  *ngIf="!showtype" >\n\n                                <ion-label>Type Paiement</ion-label>\n\n                                <ion-input type="text"  [(ngModel)]="fuel.type.name"></ion-input>\n\n                        </ion-item>\n\n\n\n                    <ion-item >\n\n                            <ion-label>Num Paiement</ion-label>\n\n                            <ion-input type="number"  [(ngModel)]="fuel.numberPayment"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item >\n\n                            <ion-label>Observations</ion-label>\n\n                            <ion-input type="text"  [(ngModel)]="fuel.observation"></ion-input>\n\n                    </ion-item>\n\n                    \n\n                    <ion-item  *ngIf="showprovider">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.idProvider"  (ionChange)="autresproviders(fuel.idProvider)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur.id">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>   \n\n                      </ion-item>\n\n                      <ion-item *ngIf="!showprovider" >\n\n                                <ion-label>Fournisseur</ion-label>\n\n                                <ion-input type="text"  [(ngModel)]="fuel.providerName"></ion-input>\n\n                        </ion-item>\n\n                      <!-- <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.providerName" (ionChange)="autres(fuel.providerName)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur.name">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                      </ion-item> -->\n\n           </ion-list>\n\n           \n\n                <button ion-button center round *ngIf="!showupdate" (click)="update()">Enregistrer\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round *ngIf="showupdate" (click)="add()">Valider\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round (click)="closeModal()">Annuler\n\n                <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n              </button>\n\n      </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center" *ngIf="showupdate"><a style="color:white"> Ajouter </a> </ion-title>\n\n          <ion-title style="text-align: center" *ngIf="!showupdate" ><a style="color:white"> Modifier</a> </ion-title>\n\n         \n\n    <ion-buttons left>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n          <ion-icon style="color:white" name="arrow-round-back"></ion-icon> \n\n        </button>\n\n      </ion-buttons>\n\n        </ion-navbar>\n\n        \n\n      </ion-header>\n\n      <ion-content class="ajoutcarburant" padding text-center style="background-color: rgb(255, 255, 255) ;">\n\n            <ion-list >\n\n                <ion-item >\n\n                <ion-label>Date</ion-label>\n\n                <ion-datetime name="startDate" displayFormat="DD/MM/YYYY, HH:mm" [(ngModel)]="operationTime" style="color:rgba(0,0,0)!important;"></ion-datetime>\n\n                    </ion-item>\n\n                <ion-item >\n\n                    <ion-label>Coût/L</ion-label>\n\n                    <ion-input min="10"  type="number"  (ionChange)="onChange()"  [(ngModel)]="fuel.costUnit"></ion-input>\n\n                </ion-item>\n\n                <ion-item >\n\n                    <ion-label>Odométre</ion-label>\n\n                    <ion-input min="10" type="number"  [(ngModel)]="fuel.odometre"></ion-input>\n\n                </ion-item>\n\n              \n\n                <ion-item>\n\n                        <ion-label>Quantité</ion-label>\n\n                        <ion-input type="number" (ionChange)="onChange()"  [(ngModel)]="fuel.quantity"></ion-input>\n\n                    </ion-item>\n\n                  \n\n                    <ion-item >\n\n                            <ion-label>Coût Total</ion-label>\n\n                            <ion-input type="number" placeholder="Coût Total" [(ngModel)]="fuel.cost"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item *ngIf="showtype">\n\n                        <ion-label>Type Paiement</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.type.id"  (ionChange)="autrestype(fuel.type.id)" interface="popover">\n\n                                <ion-option *ngFor="let type of paymentTypes" [value]="type.id">{{type.name}}</ion-option>\n\n                                <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                   </ion-item>\n\n                   <ion-item  *ngIf="!showtype" >\n\n                                <ion-label>Type Paiement</ion-label>\n\n                                <ion-input type="text"  [(ngModel)]="fuel.type.name"></ion-input>\n\n                        </ion-item>\n\n\n\n                    <ion-item >\n\n                            <ion-label>Num Paiement</ion-label>\n\n                            <ion-input type="number"  [(ngModel)]="fuel.numberPayment"></ion-input>\n\n                    </ion-item>\n\n                    <ion-item >\n\n                            <ion-label>Observations</ion-label>\n\n                            <ion-input type="text"  [(ngModel)]="fuel.observation"></ion-input>\n\n                    </ion-item>\n\n                    \n\n                    <ion-item  *ngIf="showprovider">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.idProvider"  (ionChange)="autresproviders(fuel.idProvider)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur.id">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>   \n\n                      </ion-item>\n\n                      <ion-item *ngIf="!showprovider" >\n\n                                <ion-label>Fournisseur</ion-label>\n\n                                <ion-input type="text"  [(ngModel)]="fuel.providerName"></ion-input>\n\n                        </ion-item>\n\n                      <!-- <ion-item style="background-color:rgba(58, 58, 58, 0.2)!important;">\n\n                        <ion-label>Fournisseur</ion-label>\n\n                        <ion-select [(ngModel)]="fuel.providerName" (ionChange)="autres(fuel.providerName)" interface="popover">\n\n                          <ion-option *ngFor="let fournisseur of fuelProviders" [value]="fournisseur.name">{{fournisseur.name}}</ion-option>\n\n                          <ion-option value="0" >Autres</ion-option>\n\n                        </ion-select>\n\n                      </ion-item> -->\n\n           </ion-list>\n\n           \n\n                <button ion-button center round *ngIf="!showupdate" (click)="update()">Enregistrer\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round *ngIf="showupdate" (click)="add()">Valider\n\n                <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n              </button>\n\n              <button ion-button center round (click)="closeModal()">Annuler\n\n                <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n              </button>\n\n      </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestion-park\carburant\carburant-form\carburant-form.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_view_controller__["a" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_fueling_service__["a" /* FuelingService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_components_alert_alert_controller__["a" /* AlertController */]])
 ], CarburantForm);
@@ -3635,7 +3638,7 @@ GestionPark = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Dashbord; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_index__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_index__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_params__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_fueling_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js__ = __webpack_require__(742);
@@ -4126,7 +4129,7 @@ var VehiculeForm = (function () {
 }());
 VehiculeForm = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'app-vehicule-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicule-form\vehicule-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center"><a style="color:white"> Modifier Véhicule</a> </ion-title>\n\n          <ion-buttons end>\n\n            <button ion-button icon-only (click)="closeModal()" >\n\n            <ion-icon style="color:white" name="arrow-down"></ion-icon>\n\n          </button>\n\n          </ion-buttons>\n\n        </ion-navbar>\n\n </ion-header>\n\n <ion-content padding text-center style="background-color: rgba(194, 190, 190, 0.446) ;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  style=" background-color:rgba(0,0,0,0.2)!important;" >\n\n                  <ion-input disabled="true" [(ngModel)]="vehicule.device.idDevice"></ion-input>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;width:100%!important">\n\n                 \n\n                    <ion-label>Groupes</ion-label> \n\n                <ion-select  *ngIf="groupsToSelect.length >0" [(ngModel)]="idtest"  [multiple]="true" (selected)="selectedGroup($event)" (removed)="removedGroup($event)" style="width:100%!important"> \n\n                    <ion-label>Groupes</ion-label> \n\n                  <ion-option  *ngFor="let groupToSelect of groupsToSelect">{{groupToSelect.text}}</ion-option>\n\n                  </ion-select>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                    <ion-label>Matricule</ion-label>  \n\n                    <ion-input  placeholder="Matricule" [(ngModel)]="vehicule.matricule" ></ion-input>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                    <ion-label>Surnom</ion-label>  \n\n                  <ion-input  placeholder="Surnom" [(ngModel)]="vehicule.alias" ></ion-input>\n\n              </ion-item>\n\n              <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                  <ion-label>Marque</ion-label>  \n\n                <ion-input  placeholder="Marque" [(ngModel)]="vehicule.mark" ></ion-input>\n\n            </ion-item>\n\n            <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                <ion-label>Vitesse Max</ion-label>  \n\n              <ion-input type="number" placeholder="Vitesse Max" [(ngModel)]="vehicule.maxSpeed" ></ion-input>\n\n          </ion-item>\n\n          <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n              <ion-label>N° SIM</ion-label>  \n\n            <ion-input type="number" placeholder="N° SIM" [(ngModel)]="deviceNumber" ></ion-input>\n\n        </ion-item>\n\n        \n\n       </ion-list>\n\n     \n\n          <button ion-button center round (click)="update()">Modifier</button>\n\n          <button ion-button center round (click)="closeModal()">Annuler</button>\n\n     \n\n\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicule-form\vehicule-form.html"*/
+        selector: 'app-vehicule-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicule-form\vehicule-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center"><a style="color:white"> Modifier Véhicule</a> </ion-title>\n\n          <ion-buttons end>\n\n            <button ion-button icon-only (click)="closeModal()" >\n\n            <ion-icon style="color:white" name="arrow-down"></ion-icon>\n\n          </button>\n\n          </ion-buttons>\n\n        </ion-navbar>\n\n </ion-header>\n\n <ion-content padding text-center style="background-color:white">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  style=" background-color:white!important;" >\n\n                  <ion-input disabled="true" [(ngModel)]="vehicule.device.idDevice"></ion-input>\n\n                </ion-item>\n\n                <ion-item style=" background-color:white!important;width:100%!important">\n\n                 \n\n                    <ion-label>Groupes</ion-label> \n\n                <ion-select  *ngIf="groupsToSelect.length >0" [(ngModel)]="idtest"  [multiple]="true" (selected)="selectedGroup($event)" (removed)="removedGroup($event)" style="width:100%!important"> \n\n                    <ion-label>Groupes</ion-label> \n\n                  <ion-option  *ngFor="let groupToSelect of groupsToSelect">{{groupToSelect.text}}</ion-option>\n\n                  </ion-select>\n\n                </ion-item>\n\n                <ion-item style=" background-color:white!important;">\n\n                    <ion-label>Matricule</ion-label>  \n\n                    <ion-input   [(ngModel)]="vehicule.matricule" ></ion-input>\n\n                </ion-item>\n\n                <ion-item style=" background-color:white!important;">\n\n                    <ion-label>Surnom</ion-label>  \n\n                  <ion-input  [(ngModel)]="vehicule.alias" ></ion-input>\n\n              </ion-item>\n\n              <ion-item style=" background-color:white!important;">\n\n                  <ion-label>Marque</ion-label>  \n\n                <ion-input   [(ngModel)]="vehicule.mark" ></ion-input>\n\n            </ion-item>\n\n            <ion-item style=" background-color:white!important;">\n\n                <ion-label>Vitesse Max</ion-label>  \n\n              <ion-input type="number"  [(ngModel)]="vehicule.maxSpeed" ></ion-input>\n\n          </ion-item>\n\n          <ion-item style=" background-color:white!important;">\n\n              <ion-label>N° SIM</ion-label>  \n\n            <ion-input type="number"  [(ngModel)]="deviceNumber" ></ion-input>\n\n        </ion-item>\n\n        \n\n       </ion-list>\n\n     \n\n          <button ion-button center round (click)="update()">Modifier</button>\n\n          <button ion-button center round (click)="closeModal()">Annuler</button>\n\n     \n\n\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicule-form\vehicule-form.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_vehicule_service__["a" /* VehiculeService */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* ToastController */]])
 ], VehiculeForm);
@@ -4246,7 +4249,7 @@ var GestPoi = (function () {
 }());
 GestPoi = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-        selector: 'page-gest-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">Points d\'intérêt</span>\n\n    </ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;margin-top:10px;background-color:rgba(0,0,0,0.6);" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n</ion-header>\n\n\n\n<ion-content style="padding-top:10px;">\n\n  <ion-list-header>Points</ion-list-header>\n\n  <ion-list *ngFor="let pointInterest of pointInterests">\n\n    <ion-item-sliding #item *ngIf="pointInterest.type==MARKER">\n\n\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{imagesDir}}{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n        </ion-avatar>\n\n        <h2>{{pointInterest.name}} </h2>\n\n        <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n        <p style="font-size:15px">{{pointInterest.address}}</p>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button style="width:60px;background-color:#488aff" (click)="edit(pointInterest)">\n\n          <ion-icon ios="ios-settings-outline" md="md-settings"></ion-icon>\n\n        </button>\n\n        <button ion-button style="width:60px;" color="danger" (click)="delete(pointInterest)">\n\n          <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n  <ion-list-header>Zones</ion-list-header>\n\n  <ion-list *ngFor="let pointInterest of pointInterests">\n\n    <ion-item-sliding *ngIf="pointInterest.type==POLYGON">\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{imagesDir+imagesPOIDir+pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n        </ion-avatar>\n\n        <h2>{{pointInterest.name}} </h2>\n\n        <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n        <p style="font-size:15px">{{pointInterest.address}}</p>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button style="width:60px;background-color:#488aff" (click)="edit(pointInterest)">\n\n          <ion-icon ios="ios-settings-outline" md="md-settings"></ion-icon>\n\n        </button>\n\n        <button ion-button style="width:60px;" color="danger" (click)="delete(pointInterest)">\n\n          <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/,
+        selector: 'page-gest-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">Points d\'intérêt</span>\n\n    </ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;background-color:rgba(0,0,0,0.6);margin-top:10px;" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n</ion-header>\n\n\n\n<ion-content style="padding-top:10px;">\n\n  <ion-list-header>Points</ion-list-header>\n\n  <ion-list *ngFor="let pointInterest of pointInterests">\n\n    <ion-item-sliding #item *ngIf="pointInterest.type==MARKER">\n\n\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{imagesDir}}{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n        </ion-avatar>\n\n        <h2>{{pointInterest.name}} </h2>\n\n        <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n        <p style="font-size:15px">{{pointInterest.address}}</p>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button style="width:60px;background-color:#488aff" (click)="edit(pointInterest)">\n\n          <ion-icon ios="ios-settings-outline" md="md-settings"></ion-icon>\n\n        </button>\n\n        <button ion-button style="width:60px;" color="danger" (click)="delete(pointInterest)">\n\n          <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n  <ion-list-header>Zones</ion-list-header>\n\n  <ion-list *ngFor="let pointInterest of pointInterests">\n\n    <ion-item-sliding *ngIf="pointInterest.type==POLYGON">\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{imagesDir+imagesPOIDir+pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n        </ion-avatar>\n\n        <h2>{{pointInterest.name}} </h2>\n\n        <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n        <p style="font-size:15px">{{pointInterest.address}}</p>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button style="width:60px;background-color:#488aff" (click)="edit(pointInterest)">\n\n          <ion-icon ios="ios-settings-outline" md="md-settings"></ion-icon>\n\n        </button>\n\n        <button ion-button style="width:60px;" color="danger" (click)="delete(pointInterest)">\n\n          <ion-icon ios="ios-trash-outline" md="md-trash"></ion-icon>\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]])
 ], GestPoi);
@@ -4260,7 +4263,7 @@ GestPoi = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StopList; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_data_management__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
@@ -4350,7 +4353,7 @@ StopList = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricalForm; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_historical_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_historical_service__ = __webpack_require__(74);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4397,7 +4400,7 @@ var HistoricalForm = (function () {
 }());
 HistoricalForm = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-historical-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title style="width:100%">\n\n      <a>Historique</a>\n\n    </ion-title>\n\n    <ion-buttons left>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n          <ion-icon style="color:white" name="arrow-round-back"></ion-icon> \n\n        </button>\n\n      </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding text-center style="background-color: rgba(255, 255, 255,1) !important;">\n\n  <ion-item style="background-color:rgba(0,0,0,0.3);margin-top:200px;">\n\n    <ion-label style="color:white">Historique:\n\n      <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>\n\n    </ion-label>\n\n    <ion-select select-ios-padding-end [(ngModel)]="list" interface="popover" style="width:100%;color:white">\n\n      <ion-option value="trajet">Liste des trajets</ion-option>\n\n      <ion-option value="arret">Liste des arrêts</ion-option>\n\n      <ion-option value="kilo">Liste de Kilométrage</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n  <ion-item style="margin-top: 70px;background-color:rgba(0,0,0,0.3)">\n\n    <ion-label style="color:white">Date début</ion-label>\n\n    <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate" style="color:white"></ion-datetime>\n\n  </ion-item>\n\n\n\n  <ion-item style="margin-bottom: 20px;background-color:rgba(0,0,0,0.3)">\n\n    <ion-label style="color:white">Date fin</ion-label>\n\n    <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate" style="color:white"> </ion-datetime>\n\n  </ion-item>\n\n  <!--<ion-item>\n\n    <ion-label>Date de début</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="firstDate"></ion-datetime>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Date de fin</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="lastDate"></ion-datetime>\n\n  </ion-item>-->\n\n\n\n  <button ion-button center round (click)="getAllPaths()">Chercher\n\n    <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n  </button>\n\n  <button ion-button center round (click)="closeModal()">Annuler\n\n    <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/,
+        selector: 'page-historical-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title style="width:100%">\n\n      <a style="color:white">Historique</a>\n\n    </ion-title>\n\n    <ion-buttons left>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n          <ion-icon style="color:white" name="arrow-round-back"></ion-icon> \n\n        </button>\n\n      </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding text-center style="background-color: rgba(255, 255, 255,1) !important;">\n\n  <ion-item style="background-color:rgba(0,0,0,0.3);margin-top:200px;">\n\n    <ion-label style="color:white">Historique:\n\n      <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>\n\n    </ion-label>\n\n    <ion-select select-ios-padding-end [(ngModel)]="list" interface="popover" style="width:100%;color:white">\n\n      <ion-option value="trajet">Liste des trajets</ion-option>\n\n      <ion-option value="arret">Liste des arrêts</ion-option>\n\n      <ion-option value="kilo">Liste de Kilométrage</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n  <ion-item style="margin-top: 70px;background-color:rgba(0,0,0,0.3)">\n\n    <ion-label style="color:white">Date début</ion-label>\n\n    <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate" style="color:white"></ion-datetime>\n\n  </ion-item>\n\n\n\n  <ion-item style="margin-bottom: 20px;background-color:rgba(0,0,0,0.3)">\n\n    <ion-label style="color:white">Date fin</ion-label>\n\n    <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate" style="color:white"> </ion-datetime>\n\n  </ion-item>\n\n  <!--<ion-item>\n\n    <ion-label>Date de début</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="firstDate"></ion-datetime>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Date de fin</ion-label>\n\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="lastDate"></ion-datetime>\n\n  </ion-item>-->\n\n\n\n  <button ion-button center round (click)="getAllPaths()">Chercher\n\n    <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n  </button>\n\n  <button ion-button center round (click)="closeModal()">Annuler\n\n    <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
 ], HistoricalForm);
@@ -4524,11 +4527,11 @@ SigningService = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet__);
@@ -4657,13 +4660,13 @@ GroupsPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupeRealtime; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_historical_service__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_real_time_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_historical_service__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_real_time_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_navigation_nav_params__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_global_config__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_geocoding_service__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_geocoding_service__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__objects_real_time__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common__ = __webpack_require__(38);
@@ -5063,7 +5066,7 @@ GroupeRealtime = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MileageComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(13);
@@ -5751,7 +5754,7 @@ var Vehicules = (function () {
 }());
 Vehicules = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">Véhicules</span>\n\n    </ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;margin-top:10px;background-color:rgba(0,0,0,0.6);" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Matricule\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Chauffeur\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Vitesse Max\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngFor="let vehicule of vehicules">\n\n    <ion-list>\n\n      <ion-row (click)="presentConfirm(vehicule)">\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{vehicule.matricule}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{vehicule.lastName}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{vehicule.maxSpeed}}\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
+        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">Véhicules</span>\n\n    </ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;background-color:rgba(0,0,0,0.6);margin-top:10px;" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Matricule\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Chauffeur\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Vitesse Max\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngFor="let vehicule of vehicules">\n\n    <ion-list>\n\n      <ion-row (click)="presentConfirm(vehicule)">\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{vehicule.matricule}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{vehicule.lastName}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{vehicule.maxSpeed}}\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_vehicule_service__["a" /* VehiculeService */]])
 ], Vehicules);
@@ -5820,7 +5823,7 @@ var Groupes = (function () {
 }());
 Groupes = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-        selector: 'page-groupes',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/'<ion-header>\n\n  <ion-navbar style="height:48px" hideBackButton="true">\n\n    <ion-title></ion-title>\n\n    <ion-title>\n\n      <span style="color:white">Groupes</span>\n\n    </ion-title>\n\n\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;margin-top:10px;background-color:rgba(0,0,0,0.6);" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-3 col-sm-3 col-md-3 col-xs-12>\n\n          Icon\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-9 col-sm-9 col-md-9 col-xs-12>\n\n          Groupe\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngFor="let group of groups">\n\n    <ion-item>\n\n      <ion-row>\n\n        <ion-col col-3 col-sm-3 col-md-3 col-xs-12>\n\n          <img src="{{imagesDir+group.imageUrl}}" />\n\n        </ion-col>\n\n        <ion-col col-9 col-sm-9 col-md-9 col-xs-12>\n\n          <span style="margin-left:5px"></span>{{group.nom}}\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/,
+        selector: 'page-groupes',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/'<ion-header>\n\n  <ion-navbar style="height:48px" hideBackButton="true">\n\n    <ion-title></ion-title>\n\n    <ion-title>\n\n      <span style="color:white">Groupes</span>\n\n    </ion-title>\n\n\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;background-color:rgba(0,0,0,0.6);margin-top:10px;margin-top:10px;" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-3 col-sm-3 col-md-3 col-xs-12>\n\n          Icon\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-9 col-sm-9 col-md-9 col-xs-12>\n\n          Groupe\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngFor="let group of groups">\n\n    <ion-item>\n\n      <ion-row>\n\n        <ion-col col-3 col-sm-3 col-md-3 col-xs-12>\n\n          <img src="{{imagesDir+group.imageUrl}}" />\n\n        </ion-col>\n\n        <ion-col col-9 col-sm-9 col-md-9 col-xs-12>\n\n          <span style="margin-left:5px"></span>{{group.nom}}\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\groupes\groupes.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_group_service__["a" /* GroupService */]])
 ], Groupes);
@@ -5884,7 +5887,7 @@ var DriverComponent = (function () {
 }());
 DriverComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-chauffeurs',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\chauffeurs\chauffeurs.html"*/'<ion-header>\n\n  <ion-navbar style="height:48px" hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">Chauffeurs</span>\n\n    </ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;background-color:rgba(0,0,0,0.6); margin-top:10px;" (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Nom\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Télephone\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          CIN\n\n        </ion-col>\n\n\n\n\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngFor="let driver of drivers">\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{driver.lastName}} {{driver.firstName}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{driver.telephone}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{driver.cin}}\n\n        </ion-col>\n\n\n\n\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <!-- <table style="font-size: 15px;width:100%">\n\n    <thead style="width:100%!important">\n\n      <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);width:100%!important;opacity: 0.75;">\n\n        <th style="text-align: center;width:33%">Nom</th>\n\n        <th style="text-align: center;width:33%">Téléphone</th>\n\n        <th style="text-align: center;width:33%">CIN</th>\n\n      </tr>\n\n    </thead>\n\n    <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n\n\n      <tr *ngFor="let driver of drivers" style="border-top: solid black 1px;height:50px;">\n\n        <td style="text-align: center">\n\n          {{driver.lastName}} {{driver.firstName}}\n\n        </td>\n\n        <td style="text-align: center;" data-toggle="tooltip">\n\n          {{driver.telephone}}\n\n        </td>\n\n        <td style="text-align: center;" data-toggle="tooltip">\n\n          {{driver.cin}}\n\n        </td>\n\n\n\n      </tr>\n\n    </tbody>\n\n  </table> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\chauffeurs\chauffeurs.html"*/,
+        selector: 'page-chauffeurs',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\chauffeurs\chauffeurs.html"*/'<ion-header>\n\n  <ion-navbar style="height:48px" hideBackButton="true">\n\n    <ion-title>\n\n      <span style="color:white">Chauffeurs</span>\n\n    </ion-title>\n\n  </ion-navbar>\n\n  <ion-fab top left outline class="ion-fab1" #fab>\n\n    <!--IOS margin-top:10px; -->\n\n    <button ion-fab mini outline style="margin-left: -5px !important;background-color:rgba(0,0,0,0.6);margin-top:10px; " (click)="openmenu()">\n\n      <i class="fa fa-list" aria-hidden="true"></i>\n\n    </button>\n\n  </ion-fab>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Nom\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          Télephone\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          CIN\n\n        </ion-col>\n\n\n\n\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngFor="let driver of drivers">\n\n    <ion-list>\n\n      <ion-row>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{driver.lastName}} {{driver.firstName}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{driver.telephone}}\n\n        </ion-col>\n\n        <br>\n\n        <ion-col col-4 col-sm-4 col-md-4 col-xs-12>\n\n          {{driver.cin}}\n\n        </ion-col>\n\n\n\n\n\n      </ion-row>\n\n    </ion-list>\n\n  </ion-card>\n\n  <!-- <table style="font-size: 15px;width:100%">\n\n    <thead style="width:100%!important">\n\n      <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);width:100%!important;opacity: 0.75;">\n\n        <th style="text-align: center;width:33%">Nom</th>\n\n        <th style="text-align: center;width:33%">Téléphone</th>\n\n        <th style="text-align: center;width:33%">CIN</th>\n\n      </tr>\n\n    </thead>\n\n    <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n\n\n      <tr *ngFor="let driver of drivers" style="border-top: solid black 1px;height:50px;">\n\n        <td style="text-align: center">\n\n          {{driver.lastName}} {{driver.firstName}}\n\n        </td>\n\n        <td style="text-align: center;" data-toggle="tooltip">\n\n          {{driver.telephone}}\n\n        </td>\n\n        <td style="text-align: center;" data-toggle="tooltip">\n\n          {{driver.cin}}\n\n        </td>\n\n\n\n      </tr>\n\n    </tbody>\n\n  </table> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\chauffeurs\chauffeurs.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* MenuController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_driver_service__["a" /* DriverService */]])
@@ -6139,10 +6142,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_groups_page_groups_page__ = __webpack_require__(421);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_historical_form_historical_form__ = __webpack_require__(417);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_paths_list_paths_list__ = __webpack_require__(418);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__utils_geocoding_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__utils_map_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_real_time_service__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_historical_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__utils_geocoding_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__utils_map_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_real_time_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_historical_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_data_management_service__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_storage__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_stop_list_stop_list__ = __webpack_require__(416);
@@ -6233,7 +6236,6 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_24__pages_historical_form_historical_form__["a" /* HistoricalForm */],
             __WEBPACK_IMPORTED_MODULE_25__pages_paths_list_paths_list__["a" /* PathsList */],
             __WEBPACK_IMPORTED_MODULE_32__pages_stop_list_stop_list__["a" /* StopList */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_mileage_mileage__["a" /* MileageComponent */],
             __WEBPACK_IMPORTED_MODULE_8__pages_gestpoi_gestpoi__["a" /* GestPoi */],
             __WEBPACK_IMPORTED_MODULE_34__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
             __WEBPACK_IMPORTED_MODULE_35__pages_datamana_groupes_groupes__["a" /* Groupes */],
@@ -6245,6 +6247,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_41__pages_gestion_park_dashbord_dashbord__["a" /* Dashbord */],
             __WEBPACK_IMPORTED_MODULE_43__pages_gestion_park_carburant_carburant_form_carburant_form__["a" /* CarburantForm */],
             __WEBPACK_IMPORTED_MODULE_3__pages_gestion_park_vidange_vidange__["a" /* VidangeComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__pages_mileage_mileage__["a" /* MileageComponent */],
             __WEBPACK_IMPORTED_MODULE_2__pages_gestion_park_vidange_vidange_form_vidange_form__["a" /* VidangeForm */],
             __WEBPACK_IMPORTED_MODULE_1__pages_gestion_park_documentcirculation_documentcirculation__["a" /* DocumentCirculationComponent */],
             __WEBPACK_IMPORTED_MODULE_47__pages_gestion_park_documentcirculation_doc_circ_aff_doc_circ__["a" /* DocCirc */],
@@ -6320,7 +6323,114 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 62:
+/***/ 57:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RealTimeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(419);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var RealTimeService = (function () {
+    function RealTimeService(_http, storage) {
+        this._http = _http;
+        this.storage = storage;
+        this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
+    }
+    RealTimeService.prototype.getRealTimeRecord = function (deviceId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        // ici il faut recuperer utilisateur courant !!!!
+        // il faut dabord lors de authen => tu gard utilisteur sur le storage pour que tu puise le recuperer ici
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'realTimeRecords/' + deviceId, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.getAllPois = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'pointInterests/dtos', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.getAllRealTimeRecords = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        var parms = "";
+        headers.append('Authorization', this.currentuser.token);
+        if (!this.currentuser.isRoot) {
+            parms = '?id=' + this.currentuser.id;
+        }
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'realTimeRecords' + parms, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.getAllGroups = function (keyword) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var parms = "";
+        if (!this.currentuser.isRoot) {
+            parms = '&id=' + this.currentuser.id;
+        }
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'groupes/details?keyword=' + keyword + parms, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.getGroupMini = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var parms = "";
+        if (!this.currentuser.isRoot) {
+            parms = '&id=' + this.currentuser.id;
+        }
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'groupes/minifyGroups?' + parms, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.findVehiculesByGroupsId = function (idgroup, size, page) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var parms = "";
+        if (!this.currentuser.isRoot) {
+            parms = '&id=' + this.currentuser.id;
+        }
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'vehicules/paginate/by/' + idgroup + '?size=' + size + '&page=' + page, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.getCurrentPath = function (deviceId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.post(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'paths/currentPath/' + deviceId, null, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.startEngine = function (idBoitier) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        Object(__WEBPACK_IMPORTED_MODULE_5__utils_headers__["b" /* createAuthorizationHeader */])(headers);
+        return this._http.post(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'engine/start/' + idBoitier, null, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    RealTimeService.prototype.stopEngine = function (idBoitier) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        Object(__WEBPACK_IMPORTED_MODULE_5__utils_headers__["b" /* createAuthorizationHeader */])(headers);
+        return this._http.post(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'engine/stop/' + idBoitier, null, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    return RealTimeService;
+}());
+RealTimeService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_0__ionic_storage__["b" /* Storage */]])
+], RealTimeService);
+
+//# sourceMappingURL=real-time.service.js.map
+
+/***/ }),
+
+/***/ 63:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6470,7 +6580,7 @@ var DateInterval = (function () {
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6523,7 +6633,7 @@ GeocodingService = __decorate([
 
 /***/ }),
 
-/***/ 71:
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6818,7 +6928,7 @@ MapService = __decorate([
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6889,112 +6999,6 @@ HistoricalService = __decorate([
 ], HistoricalService);
 
 //# sourceMappingURL=historical.service.js.map
-
-/***/ }),
-
-/***/ 74:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RealTimeService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(419);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var RealTimeService = (function () {
-    function RealTimeService(_http, storage) {
-        this._http = _http;
-        this.storage = storage;
-    }
-    RealTimeService.prototype.getRealTimeRecord = function (deviceId) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        // ici il faut recuperer utilisateur courant !!!!
-        // il faut dabord lors de authen => tu gard utilisteur sur le storage pour que tu puise le recuperer ici
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'realTimeRecords/' + deviceId, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.getAllPois = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'pointInterests/dtos', { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.getAllRealTimeRecords = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        var parms = "";
-        headers.append('Authorization', this.currentuser.token);
-        if (!this.currentuser.isRoot) {
-            parms = '?id=' + this.currentuser.id;
-        }
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'realTimeRecords' + parms, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.getAllGroups = function (keyword) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        var parms = "";
-        if (!this.currentuser.isRoot) {
-            parms = '&id=' + this.currentuser.id;
-        }
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'groupes/details?keyword=' + keyword + parms, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.getGroupMini = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        var parms = "";
-        if (!this.currentuser.isRoot) {
-            parms = '&id=' + this.currentuser.id;
-        }
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'groupes/minifyGroups?' + parms, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.findVehiculesByGroupsId = function (idgroup, size, page) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        var parms = "";
-        if (!this.currentuser.isRoot) {
-            parms = '&id=' + this.currentuser.id;
-        }
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'vehicules/paginate/by/' + idgroup + '?size=' + size + '&page=' + page, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.getCurrentPath = function (deviceId) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.post(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'paths/currentPath/' + deviceId, null, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.startEngine = function (idBoitier) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        Object(__WEBPACK_IMPORTED_MODULE_5__utils_headers__["b" /* createAuthorizationHeader */])(headers);
-        return this._http.post(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'engine/start/' + idBoitier, null, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    RealTimeService.prototype.stopEngine = function (idBoitier) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
-        Object(__WEBPACK_IMPORTED_MODULE_5__utils_headers__["b" /* createAuthorizationHeader */])(headers);
-        return this._http.post(__WEBPACK_IMPORTED_MODULE_4__global_config__["a" /* dns */] + 'engine/stop/' + idBoitier, null, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    return RealTimeService;
-}());
-RealTimeService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_0__ionic_storage__["b" /* Storage */]])
-], RealTimeService);
-
-//# sourceMappingURL=real-time.service.js.map
 
 /***/ }),
 
@@ -7403,6 +7407,7 @@ var Vehicule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(427);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_datamana_groupes_groupes__ = __webpack_require__(428);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_datamana_chauffeurs_chauffeurs__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7423,9 +7428,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MyApp = (function () {
-    function MyApp(platform, statusBar, _app, actionSheetCtrl, menuCtrl, alertCtrl, storage, splashScreen, toastCtrl) {
+    function MyApp(real, platform, statusBar, _app, actionSheetCtrl, menuCtrl, alertCtrl, storage, splashScreen, toastCtrl, toastController) {
         var _this = this;
+        this.real = real;
         this.platform = platform;
         this._app = _app;
         this.actionSheetCtrl = actionSheetCtrl;
@@ -7433,8 +7440,10 @@ var MyApp = (function () {
         this.alertCtrl = alertCtrl;
         this.storage = storage;
         this.toastCtrl = toastCtrl;
+        this.toastController = toastController;
         this.listhide = true;
         this.tempsreelopened = true;
+        this.expirer = false;
         platform.ready().then(function () {
             //alert de confirmation de quitter l'application
             platform.registerBackButtonAction(function () {
@@ -7494,7 +7503,22 @@ var MyApp = (function () {
     };
     //verification d'authentification
     MyApp.prototype.checkPreviousAuthorization = function () {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
+        var _this = this;
+        var toast = this.toastController.create({
+            message: 'Session expirée!',
+            duration: 4000
+        });
+        if (!JSON.parse(localStorage.getItem('currentuser'))) {
+            this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
+        }
+        else {
+            this.real.getGroupMini().subscribe(function (y) {
+                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_0__pages_historical_historical__["a" /* Historical */]);
+            }, function (err) {
+                toast.present();
+                _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
+            });
+        }
     };
     //alert quitter l'app
     MyApp.prototype.showAlert = function () {
@@ -7559,7 +7583,10 @@ __decorate([
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/'<ion-menu [content]="mycontent">\n\n  <!--style="margin-top:20px"-->\n\n  <ion-header style="height:48px;">\n\n    <ion-title>\n\n      <span style="color:white">Menu</span>\n\n    </ion-title>\n\n  </ion-header>\n\n  <ion-content style="background-color:white;margin-top:10px;">\n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/img/logorim.jpg">\n\n      </ion-avatar>\n\n      <h2>Rim Télécom</h2>\n\n      <p>Online</p>\n\n    </ion-item>\n\n    <button ion-button color="light" (click)="GotoTempsRealandHistorique()" style="width:90%">Temps réel & Historique</button>\n\n    <button ion-button color="light" (click)="hidelist()" style="width:90%">Gestion de données</button>\n\n    <ion-list [hidden]="listhide">\n\n      <ion-card>\n\n        <ion-list>\n\n          <button ion-item (click)="GoToGestVehi()">\n\n            <i class="fa fa-car" aria-hidden="true"></i>\n\n            Véhicules\n\n          </button>\n\n          <button ion-item (click)="GoToGestGroup()">\n\n            <i class="fa fa-users" aria-hidden="true"></i>\n\n            Groupes\n\n          </button>\n\n          <button ion-item (click)="GotoGestchauf()">\n\n            <i class="fa fa-user" aria-hidden="true"></i>\n\n            Conducteurs\n\n          </button>\n\n          <button ion-item (click)="GotoGestpoi()">\n\n            <i class="fa fa-flag" aria-hidden="true"></i>\n\n            Points d\'intérêt\n\n          </button>\n\n        </ion-list>\n\n      </ion-card>\n\n    </ion-list>\n\n  </ion-content>\n\n  <ion-footer>\n\n    <button ion-button outline full color="danger" (click)="logoutconfirm()">Déconnexion</button>\n\n  </ion-footer>\n\n</ion-menu>\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* ToastController */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
